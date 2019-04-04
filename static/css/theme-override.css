@@ -1,0 +1,15 @@
+footer { font-size: 90%; font-family: monospace; }
+
+
+
+.title, 
+.author, 
+.date, 
+.terms{
+    color: black
+}
+
+.article-meta {
+    background-color: transparent
+
+}

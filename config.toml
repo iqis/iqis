@@ -1,0 +1,34 @@
+baseurl = "/"
+languageCode = "en-us"
+title = "scratch_and_scribble"
+theme = "hugo-classic"
+googleAnalytics = ""
+ignoreFiles = ["\\.Rmd$", "_files$", "_cache$"]
+preserveTaxonomyNames = true
+enableEmoji = true
+footnotereturnlinkcontents = "↩"
+
+[permalinks]
+    post = "/post/:year/:month/:day/:slug/"
+
+[[menu.main]]
+    name = "Categories"
+    url = "categories/"
+    weight = 1
+#[[menu.main]]
+#    name = "Twitter"
+#    url = "http://twitter.com/iqis_gnahz"
+#    weight = 2
+#[[menu.main]]
+#    name = "GitHub"
+#    url = "http://github.com/iqis"
+#    weight = 3
+
+[[menu.feed]]
+    name = "rss"
+    url = "/index.xml"
+
+[params]
+    description = "just another blog on data science and advanced media analytics with R"
+    footer = "Siqi Zhang 2019"
+    custom_css = ["css/theme-override.css"]
