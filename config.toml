@@ -1,6 +1,6 @@
 baseurl = "/"
 languageCode = "en-us"
-title = "scratch_and_scribble"
+title = "iqis"
 theme = "hugo-classic"
 googleAnalytics = ""
 ignoreFiles = ["\\.Rmd$", "_files$", "_cache$"]
@@ -30,5 +30,5 @@ footnotereturnlinkcontents = "↩"
 
 [params]
     description = "just another blog on data science and advanced media analytics with R"
-    footer = "Siqi Zhang 2019"
+    footer = '<script type="text/javascript">document.write(new Date().getFullYear());</script> Siqi Zhang'
     custom_css = ["css/theme-override.css"]
