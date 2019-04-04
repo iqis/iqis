@@ -4,16 +4,177 @@ author: "Siqi Zhang"
 date: '2019-03-29'
 slug: variadic-function-in-r-and-python
 tags:
-- R
-- Python
 - Programming
 - function
-categories: []
+- variadic
+categories: [R, Python]
 ---
+ 
+In R, it is most usual to see all arguments defined explicitly for a funciton, such as in:
 
-In R, one uses `...` to denote variadic arguments in a function definition, which means the function can take any number of arguments, without having been pre-defined. 
+```
+rnorm(n, mean = 0, sd = 1)
+```
 
-The same is true in Python. `*args` and `*kwargs`
+Other times, the function may take any number of arguments. Such as in: 
 
-An anecdote, the proper name of `...`, according to the R core team, is _dot-dot-dot_, not _eclipse_. You may make a fool of yourself trying to correct someone using _dot-dot-dot_.  
+```
+sum(..., na.rm = FALSE)
+```
+Functions like this are called [_variadic functions_](https://en.wikipedia.org/wiki/Variadic_function). 
+`...` serves as the placeholder for the unspecified arguments. Note that the correct name of `...` pertaining to the R language, according to the offical [R Language Definition](https://cran.r-project.org/doc/manuals/R-lang.html#Dot_002ddot_002ddot), is _dot-dot-dot_, not _eclipse_. It is not unusual to see people use _eclipse_ [with confidence](https://ipub.com/r-three-dots-ellipsis/). You make take the advantage of this knowledge to make a fool of someone when he would try to correct you for invoking _dot-dot-dot_.
+
+
+
+```{r}
+sum(1,2,3, c(4,5,6), 7:9)
+```
+
+Sometimes, the `...` arguments can also be named. 
+
+```
+c(..., recursive = FALSE, use.names = TRUE)
+```
+
+The following code calls `c()` function, and uses argument names as the element names is the resulting `vector`. 
+```{r}
+c(foo = TRUE, bar = FALSE)
+```
+
+
+You may employ both methods when writing your own function.
+
+The following function takes an `x`, an `y`, and results the sum of `x` and `y` and 7. You must specify `x` and `y`, and only `x` and `y`, when calling this funciton.
+
+```{r}
+add_seven <- function(x, y){
+        x + y + 7
+}
+
+add_seven(x = 10, y = 10)
+add_seven(10, 10)
+```
+
+
+This function uses `...` to let you pass any number of arguments. There can only be one `...` in one function call; and the `...` stays the same through the whole call stack. That means you can pass along the `...` to another function that also takes `...`. 
+
+```{r}
+add_seven_variadic <- function(...){
+        sum(..., 7)
+}
+
+add_seven_variadic()
+add_seven_variadic(10)
+add_seven_variadic(10, 10)
+add_seven_variadic(10, 10, 10)
+add_seven_variadic(x = 10, y = 10, z = 10) # argument names ignored here
+```
+
+
+You may refer to the  `...` more than one time in the function body. The following function adds the `...` with 7, and then itself again. 
+
+```{r}
+add_seven_variadic_twice <- function(...){
+        add_seven_variadic(...) + sum(...)
+}
+
+add_seven_variadic_twice(10)
+```
+
+
+It is also possible to _*capture*_ the `...` as a list. This is very helpful in advanced programming. The easiest way is just use `list(...)`.
+
+In the following code, `situation()` captures and returns the `...` as a list `my_situation`, `proclaim()` then formats and prints messages from `my_situation`:
+
+```{r}
+situation <- function(...){
+        dots <- list(...)
+        return(dots)
+}
+
+report <- function(s) {
+        cat("The weather is ", s$weather, ", ",
+            "my mood is ", s$mood, ", ",
+            "and there is $", s$change, " in my pocket.\n",
+            "I also have ", (length(s) - 3)," other fact(s) in my situation.\n",
+            sep = "")
+}
+
+my_change <- "2.25"
+
+my_situation <- situation(
+        weather = "fine",
+        mood = "jolly",
+        change = my_change,
+        location = "Secaucus, NJ"
+)
+
+report(my_situation)
+print(my_situation)
+
+
+```
+
+
+### Dot Expansion
+
+The `list(...)` method automatically evaluates any expresion in the `...`, this is called _dot expansion_.  
+
+In our previous example, the `change` argument take the _name_ `my_change`, which evaluates to 2.25; the other arguments are all vectors, such as the string `"fine"`, and will always evaluate to themselves. 
+
+However, we sometimes wishes to keep the argument and evaluate them later, or in a different context. In this case, we must avoid dot expansion. One way to do it is using `match.call(expand.dots = FALSE)$...`
+
+
+
+In this example, we get the `change` value from 
+
+```{r}
+function(){
+        dots <- match.call(expand.dots = FALSE)$...
+}
+```
+
+
+```{r}
+xxx <- function(...){
+        dots <- match.call(expand.dots = FALSE)$...
+        dots
+}
+
+yyy<- function(...){
+dots <- list(...)
+                dots
+}
+
+xxx(x = rnorm(10))
+yyy(y = rnorm(10))
+
+
+```
+
+
+
+## Python
+In Python, there is a similar feature with more complexity. `*args` and `**kwargs` denotes variadic arguments in place of `...`.
+
+One can use an arbitrary name succeding `*` and `**`, such as `*foo` and `**bar`, but the previous example is the prevailing convention. 
+
+Here are some examples:
+```{python}
+def add_seven(x, y):
+    return sum([x, y, 7])
+
+print(add_seven(10, 10))
+```
+
+```{python}
+def add_seven_variadic(*args):
+    return sum([*args, 7])
+    
+print(add_seven_variadic())
+print(add_seven_variadic(10))
+print(add_seven_variadic(10, 10))
+print(add_seven_variadic(10, 10, 10))
+```
+Note that the `sum()` function in Python is not a variadic function itself, and must take an _iterable_ as its argument; in this case, a `list`. 
 
