@@ -3,7 +3,7 @@ title: Home
 ---
 
 
-<img src = "img/my_website.png" style = "max-width: 60%; float:middle; clip: rect(0px,60px,200px,0px);" alt = "My Website!!!!" />
+<img src = "img/my_website.png" style = "max-width: 60%; float:middle; clip: rect(0px,60px,200px,0px); display:none" alt = "My Website!!!!" />
 
 
 [<img src="https://github.com/goodroot/hugo-classic/raw/master/images/partywizard.gif" style="max-width:15%;min-width:40px;float:right;display:none;" alt="Github repo" />](Merlin)

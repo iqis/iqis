@@ -1,0 +1,20 @@
+---
+title: "Variadic function in R and Python"
+author: "Siqi Zhang"
+date: '2019-03-29'
+slug: variadic-function-in-r-and-python
+tags:
+- R
+- Python
+- Programming
+- function
+categories: []
+---
+
+In R, one uses `...` to denote variadic arguments in a function definition, which means the function can take any number of arguments, without having been pre-defined. 
+
+The same is true in Python. `*args` and `*kwargs`
+
+
+An anecdote, the proper name of `...`, according to the R core team, is _dot-dot-dot_, not _eclipse_.  I'm sure if people will understand if you use the _eclipse_, just don't try to correct someone using _dot-dot-dot_, and make a fool of yourself. 
+
