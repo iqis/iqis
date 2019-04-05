@@ -4,7 +4,7 @@ author: Siqi Zhang
 date: '2019-04-04'
 slug: is-r-the-best-statistical-language
 categories: []
-tags: []
+tags: [R, Python]
 ---
 
 ```{r, setup, include = FALSE}

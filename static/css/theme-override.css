@@ -1,4 +1,7 @@
-footer { font-size: 90%; font-family: monospace; }
+footer{
+    font-size: 90%; 
+    font-family: monospace;
+}
 
 
 
@@ -6,10 +9,23 @@ footer { font-size: 90%; font-family: monospace; }
 .author, 
 .date, 
 .terms{
-    color: black
+    color: black;
 }
 
-.article-meta {
-    background-color: transparent
+.article-meta{
+    background-color: transparent;
 
+}
+
+.author{
+    font-weight: normal;
+}
+
+.date{
+    font-weight: normal;
+    font-size: smaller;
+}
+
+.terms{
+    display: none;
 }

@@ -4,6 +4,7 @@ title = "iqis"
 theme = "hugo-classic"
 googleAnalytics = ""
 ignoreFiles = ["\\.Rmd$", "_files$", "_cache$"]
+hasCJKLanguage = true
 preserveTaxonomyNames = true
 enableEmoji = true
 footnotereturnlinkcontents = "↩"
@@ -11,10 +12,10 @@ footnotereturnlinkcontents = "↩"
 [permalinks]
     post = "/post/:year/:month/:day/:slug/"
 
-[[menu.main]]
-    name = "Categories"
-    url = "categories/"
-    weight = 1
+#[[menu.main]]
+#    name = "Categories"
+#    url = "categories/"
+#    weight = 1
 #[[menu.main]]
 #    name = "Twitter"
 #    url = "http://twitter.com/iqis_gnahz"
@@ -30,5 +31,5 @@ footnotereturnlinkcontents = "↩"
 
 [params]
     description = "just another blog on data science and advanced media analytics with R"
-    footer = '<script type="text/javascript">document.write(new Date().getFullYear());</script> Siqi Zhang'
+    footer = '&copy; <script type="text/javascript">document.write(new Date().getFullYear());</script> Siqi Zhang <a href = "https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>'
     custom_css = ["css/theme-override.css"]
