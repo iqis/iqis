@@ -134,7 +134,9 @@ in the follwing code example, keyword `import` does invoke underlying functions.
 import numpy as np
 
 ```
+It is not unusual to see beginner getting caught up in the syntax, which is reasonably complex. 
 
+It's harder to get started with, and you'll find yourself hitting the ceiling pretty fast. 
 
 
 ### Data Types

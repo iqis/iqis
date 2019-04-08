@@ -28,8 +28,9 @@ I always welcome new work opportunities; other than this, the current life prior
 
 - [Twitter](http://twitter.com/iqis_gnahz)
 - [GitHub](http://github.com/iqis)
-- LinkedIn `NA`
-- Facebook `NA`
+-  
+- LinkedIn (`NA`)
+- Facebook (`NA`)
 
 
 ### Articles
