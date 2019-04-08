@@ -89,7 +89,7 @@ print("no")
 }
 ```
 
-The above can be easily re-written with keywords quoted with `\``, in a purely functional style, as:
+The above can be easily re-written with keywords quoted with ``, in a purely functional style, as:
 
 ```{r}
 `for`(i, 1:5, print(i))
@@ -138,6 +138,8 @@ import numpy as np
 - `array`
   - Homogeneous, 1 to Inf dimensions
 
+Perl has `array`, `hash`
+Python has ` 
 
 ### Namespace
 R has a convenient namespace and symbol resolution scheme. It is very similar to [that of Perl](https://perlmaven.com/namespaces-and-packages), and [that of Ruby](https://rubymonk.com/learning/books/1-ruby-primer/chapters/35-modules/lessons/80-modules-as-namespaces) and uses `::` to qualify symbols within a namespace. 

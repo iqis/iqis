@@ -30,6 +30,6 @@ footnotereturnlinkcontents = "↩"
     url = "/index.xml"
 
 [params]
-    description = "just another blog on data science and advanced media analytics with R"
+    description = "on data science, advanced media analytics with R, Shiny"
     footer = '&copy; <script type="text/javascript">document.write(new Date().getFullYear());</script> Siqi Zhang <a href = "https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>'
     custom_css = ["css/theme-override.css"]
