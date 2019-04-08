@@ -1,23 +1,24 @@
 ---
-title: Is R the best statistical language?
-author: Siqi Zhang
+title: "Is R the best statistical language?"
+author: "Siqi Zhang"
 date: '2019-04-04'
 slug: is-r-the-best-statistical-language
+tags:
+- R
+- Python
 categories: []
-tags: [R, Python]
 ---
 
 
 
 <p>Or, <em>Why R is better than Python</em>.</p>
-<p>R is, without doubt, the programming language most suitable for working with data. The language is extremely easy to get started with, has minimalistic syntax, and has been inarguably the fastest growing language in the analytics domain for a number of years. R is the only domain-specific language that <a href="http://pypl.github.io/PYPL.html">ranks top 10</a> in the PYPL index.</p>
+<p>R is the programming language most suitable for working with data. The language is extremely easy to get started with, has minimalistic syntax, and has been inarguably the fastest growing language in the analytics domain for a number of years. R is the only purpose-specific language that <a href="http://pypl.github.io/PYPL.html">ranks top 10</a> in the PYPL index.</p>
 <p>Personally, R takes about 85% of all my time in front of a code editor, and is the first language that I felt have mastered. During the past two or three years, I have accomplished more with R than with any other language combined.</p>
-<p>Python, while making advances in nearly all subdomains of computing, with an edge in deep learning, has in recent years risen as a strong contender in R’s arena. Despite heightened public enthusiasm, however, it is not very likely to supplant R’s dominance in data science as the go-to language.</p>
+<p>Python, while making advances in nearly all fronts of computing, with an edge in deep learning, has in recent years risen as a strong contender in R’s arena. Despite heightened public enthusiasm, however, it is not very likely to supplant R’s dominance in data science as the go-to language.</p>
 <p>The key factor comes from usability. Python does not serve the user nearly as well as R does. In stern and stark contrast with Python’s reputation, beginners of either language often find Python’s syntax convoluted, its program verbose, and usage inconvenient. This is not on the fault of Python <em>per se</em>. R is far more superior in usability because it is built from the ground up as an interactive language.</p>
 <p>This article is going to be an in-detail analysis on R’s syntactical features, comparing with that of Python side-by-side.</p>
-<p>When I first learnt Python in 2006, I had to cope with the social stigma that comes with it. People in my social circle who know programming mostly use Java or C++; they paid little regard to Python, a “scripting language”. Nowadays the situation is very different.</p>
 <p>Some people arrive at “Python is better than R.” via “Python is a powerful, general purpose language”, and “R is a domain-specific language”.</p>
-<p>The statements are correct, but the conclusion is not. What’s wrong with this argument? According to the (Rule of the Least Power)[<a href="https://www.w3.org/2001/tag/doc/leastPower.html" class="uri">https://www.w3.org/2001/tag/doc/leastPower.html</a>], a princple codified by the W3C:</p>
+<p>The statements are correct, but the conclusion is not. What’s wrong? According to the (Rule of the Least Power)[<a href="https://www.w3.org/2001/tag/doc/leastPower.html" class="uri">https://www.w3.org/2001/tag/doc/leastPower.html</a>], a princple codified by the W3C:</p>
 <blockquote>
 <p>[Programming] in less powerful languages increases the flexibility with which information can be reused: the less powerful the language, the more you can do with the data stored in that language.</p>
 </blockquote>
@@ -27,9 +28,18 @@ tags: [R, Python]
 <p>A programming language is low level when its programs require attention to the irrelevant.</p>
 <p>— Alan Perlis</p>
 </blockquote>
-<p>Therefore, with respect to data science, Python is a lower-level programming language, and is most suitable for use beneath the friendly user interface laid out by R. Specifically, most deep learning capabilities in Python, such as <em>Keras</em>, <em>TensorFlow</em>, all have adaptations in R.</p>
-<p>For most people, a familarity with Python will only be useful for reading and porting existing codebases in the language.</p>
-<p>Using Python to approach analytical issues is like making sculpture with a chainsaw. <img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/ChainsawartinBrienz.JPG" /> It is possible to achieve great results, however only by way of struggling with the tool.</p>
+<p>Therefore, with respect to data science, Python is a lower-level programming language, and is most suitable for use beneath the friendly user interface laid out by R. Specifically, most deep learning capabilities in Python, such as <em>Keras</em>, <em>TensorFlow</em>, all have mature adaptations in R.</p>
+<p>For most people, a familarity with Python will only be useful for reading and porting existing codebases.</p>
+<p>Using Python to approach analytical issues is like making sculpture with a chainsaw.</p>
+<p><img src = "https://upload.wikimedia.org/wikipedia/commons/8/8e/ChainsawartinBrienz.JPG", style = "max-width: 30%; padding: 20px 20px 20px 20px"/></p>
+<p>It is possible to achieve great results, however only by way of struggling with the tool.</p>
+<div id="r-has-a-mature-ecosystem" class="section level3">
+<h3>R has a mature ecosystem</h3>
+<p>Rkward, Rcommander, Jamovi, and else.</p>
+<p>Python does not have a sophisticated IDE or text editor for analytics. Wrangler from yhat seems to be stagnant in development Spyder is …</p>
+<p>Jupyter is all about the “Py” in its name. I rarely see Julia or R user use the notebook.</p>
+<p>It is … to remember that Python is a language with a record of hard fork between version 2 and 3, aftermath still evident of this day. Nobody has counted the time when some Python novice trodded onto a v.2-only solution on StackOverflow, and pulled his hair in agony.</p>
+</div>
 <div id="r-is-simple" class="section level3">
 <h3>R is simple</h3>
 <p>R is a very simple language, expecially in its syntax.<br />
@@ -74,7 +84,7 @@ profile$id
 `[`(profile, &quot;name&quot;)
 `[[`(profile, &quot;gender&quot;)
 `$`(profile, id)</code></pre>
-<p>In Python, in the follwing code example, keyword <code>import</code></p>
+<p>In Python, in the follwing code example, keyword <code>import</code> does invoke underlying functions. But it is very obfuscated.</p>
 <pre class="python"><code>import numpy as np</code></pre>
 </div>
 <div id="data-types" class="section level3">
@@ -186,23 +196,6 @@ for (num in numbers){
 <pre class="python"><code>numbers = [1,2,3,4,5]
 for num in numbers:
     print(num)</code></pre>
-</div>
-</div>
-<div id="r-vs.sql" class="section level3">
-<h3>R vs. SQL</h3>
-<p>This is hardly an apples-to-apples comparison. But one can also compare an apple to an orange, both as fruits.</p>
-<p>SQL is at the basis of any relational database applications.</p>
-<pre class="sql"><code>SELECT * FROM MTCARS
-</code></pre>
-</div>
-<div id="r-vs.spss" class="section level3">
-<h3>R vs. SPSS</h3>
-<p>Although lacking recent buzz, SPSS is still widely and wildly popular. The proprietary software, originally named <em>Statistical Package for Social Sciene</em>, is sold by IBM. The point-and-click user interface helps generating sophisticated reports without any coding knowledge. The latest version uses Python scripting, which</p>
-</div>
-<div id="r-vs.matlab-gnu-octave" class="section level3">
-<h3>R vs. MATLAB (GNU Octave)</h3>
-</div>
-<div id="r-vs.sas" class="section level3">
-<h3>R vs. SAS</h3>
 <p><a href="http://panicz.github.io/pamphlet/">A Pamphlet against R</a> In spite of the porovocative title, this pamphlet has only a minute amount of reference to R, and weighs more on discussing the benefits of Scheme, a Lisp dialect. <a href="https://www.burns-stat.com/pages/Tutor/R_inferno.pdf">R Inferno</a> This is <em>the</em> epic on R pecularities and screw-ups. Contrasting with the the tile of the equivalent publication regarding JavaScript, <a href="http://bonsaiden.github.io/JavaScript-Garden/">JavaScript <em>Garden</em></a>, R users’ self-hate (or, self-pity) is quite evident.</p>
+</div>
 </div>

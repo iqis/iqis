@@ -1,0 +1,10 @@
+---
+title: Install and Load Multiple Packages in R
+author: Siqi Zhang
+date: '2018-06-08'
+slug: install-and-load-multiple-packages-in-r
+categories:
+  - R
+tags:
+  - Programming
+---

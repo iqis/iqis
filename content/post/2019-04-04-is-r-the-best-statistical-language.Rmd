@@ -1,10 +1,12 @@
 ---
-title: Is R the best statistical language?
-author: Siqi Zhang
+title: "Is R the best statistical language?"
+author: "Siqi Zhang"
 date: '2019-04-04'
 slug: is-r-the-best-statistical-language
+tags:
+- R
+- Python
 categories: []
-tags: [R, Python]
 ---
 
 ```{r, setup, include = FALSE}
@@ -13,23 +15,19 @@ knitr::opts_chunk$set(eval = FALSE)
 
 Or, _Why R is better than Python_.
 
-R is, without doubt, the programming language most suitable for working with data. The language is extremely easy to get started with, has minimalistic syntax, and has been inarguably the fastest growing language in the analytics domain for a number of years. R is the only domain-specific language that [ranks top 10](http://pypl.github.io/PYPL.html) in the PYPL index.  
+R is the programming language most suitable for working with data. The language is extremely easy to get started with, has minimalistic syntax, and has been inarguably the fastest growing language in the analytics domain for a number of years. R is the only purpose-specific language that [ranks top 10](http://pypl.github.io/PYPL.html) in the PYPL index.  
 
 Personally, R takes about 85% of all my time in front of a code editor, and is the first language that I felt have mastered. During the past two or three years, I have accomplished more with R than with any other language combined. 
 
-Python, while making advances in nearly all subdomains of computing, with an edge in deep learning, has in recent years risen as a strong contender in R's arena. Despite heightened public enthusiasm, however, it is not very likely to supplant R's dominance in data science as the go-to language. 
+Python, while making advances in nearly all fronts of computing, with an edge in deep learning, has in recent years risen as a strong contender in R's arena. Despite heightened public enthusiasm, however, it is not very likely to supplant R's dominance in data science as the go-to language. 
 
 The key factor comes from usability. Python does not serve the user nearly as well as R does. In stern and stark contrast with Python's reputation, beginners of either language often find Python's syntax convoluted, its program verbose, and usage inconvenient. This is not on the fault of Python _per se_. R is far more superior in usability because it is built from the ground up as an interactive language.
 
 This article is going to be an in-detail analysis on R's syntactical features, comparing with that of Python side-by-side. 
 
-When I first learnt Python in 2006, I had to cope with the social stigma that comes with it. People in my social circle who know programming mostly use Java or C++; they paid little regard to Python, a "scripting language". Nowadays the situation is very different.
-
-
-
 Some people arrive at "Python is better than R." via "Python is a powerful, general purpose language", and "R is a domain-specific language". 
 
-The statements are correct, but the conclusion is not. What's wrong with this argument?
+The statements are correct, but the conclusion is not. What's wrong?
 According to the (Rule of the Least Power)[https://www.w3.org/2001/tag/doc/leastPower.html], a princple codified by the W3C:
 
 > [Programming] in less powerful languages increases the flexibility with which information can be reused: the less powerful the language, the more you can do with the data stored in that language.
@@ -38,22 +36,35 @@ According to the (Rule of the Least Power)[https://www.w3.org/2001/tag/doc/least
 It is reasonable to say that, __R is as better than Python as it is less powerful__. 
 
 
-
-
 To quote a great computer scientist: 
 
 > A programming language is low level when its programs require attention to the irrelevant.
 > 
 > --- Alan Perlis
 
-Therefore, with respect to data science, Python is a lower-level programming language, and is most suitable for use beneath the friendly user interface laid out by R. Specifically, most deep learning capabilities in Python, such as _Keras_, _TensorFlow_, all have adaptations in R. 
+Therefore, with respect to data science, Python is a lower-level programming language, and is most suitable for use beneath the friendly user interface laid out by R. Specifically, most deep learning capabilities in Python, such as _Keras_, _TensorFlow_, all have mature adaptations in R. 
 
-For most people, a familarity with Python will only be useful for reading and porting existing codebases in the language. 
+For most people, a familarity with Python will only be useful for reading and porting existing codebases.
 
 Using Python to approach analytical issues is like making sculpture with a chainsaw. 
-![](https://upload.wikimedia.org/wikipedia/commons/8/8e/ChainsawartinBrienz.JPG)
+
+<img src = "https://upload.wikimedia.org/wikipedia/commons/8/8e/ChainsawartinBrienz.JPG", style = "max-width: 30%; padding: 20px 20px 20px 20px"/>
+
 It is possible to achieve great results, however only by way of struggling with the tool.
 
+### R has a mature ecosystem
+Rkward, Rcommander, Jamovi, and else.
+
+
+Python does not have a sophisticated IDE or text editor for analytics. 
+Wrangler from yhat seems to be stagnant in development
+Spyder is ...
+
+
+Jupyter is all about the "Py" in its name. I rarely see Julia or R user use the notebook. 
+
+
+It is ... to remember that Python is a language with a record of hard fork between version 2 and 3, aftermath still evident of this day. Nobody has counted the time when some Python novice trodded onto a v.2-only solution on StackOverflow, and pulled his hair in agony.
 
 
 
@@ -118,7 +129,7 @@ profile$id
 
 
 In Python, 
-in the follwing code example, keyword `import` 
+in the follwing code example, keyword `import` does invoke underlying functions. But it is very obfuscated.  
 ```{python}
 import numpy as np
 
@@ -183,6 +194,7 @@ print(dir())
 
 ### R is consistent
 Becuse R has simple syntactical features, 
+
 
 
 
@@ -295,28 +307,6 @@ for num in numbers:
 
 ```
 
-
-
-
-
-### R vs. SQL
-This is hardly an apples-to-apples comparison. But one can also compare an apple to an orange, both as fruits. 
-
-SQL is at the basis of any relational database applications. 
-
-```{sql connection=mtcars}
-SELECT * FROM MTCARS
-
-```
-
-
-
-### R vs. SPSS
-Although lacking recent buzz, SPSS is still widely and wildly popular. The proprietary software, originally named _Statistical Package for Social Sciene_, is sold by IBM. The point-and-click user interface helps generating sophisticated reports without any coding knowledge. The latest version uses Python scripting, which 
-
-### R vs. MATLAB (GNU Octave)
-
-### R vs. SAS
 
 
 
