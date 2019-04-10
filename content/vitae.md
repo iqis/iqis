@@ -16,36 +16,25 @@ Author / remote / Dec 2018 -
 - Develop interactive online learning course and practice contents on R and Python
 - Provide critical opinion in improving internal course editor
 
-    
-     
-#### Self
-Independent Consultant / Delaware Water Gap, PA / Oct 2018 - 
-
-- Design and implement Google Search Ad 360 data ingestion 
-- Shiny dashboards with Shiny, shinydashboard
-- Model on Google Play app rating 
-
-  
-  
+   
+      
 #### Metaphor 
-Master Generalist in Analytics / Garden City, NY / Oct 2017 - Sep 2018  
+Master Generalist in Analytics / Garden City, NY / Nov 2017 - Sep 2018  
 
-- Invented a method to attribute Amazon conversions from off-platform sources 
-- Lead the team in market research and digital strategies for multiple clients in consumer goods
-- Develop an integrated web traffic, e-commerce & search/display ad spending analytic platform using Google Search Ad 360, eBay Sell, Amazon MWS APIs, with Shiny and MySQL
-- Ad hoc profiling, modeling and reporting on client data
-- Fractal attribution model 
-- Statistical support to Operations as a data-driven advisor, suggesting KPIs and target values
+- Lead team on market research and digital strategies for multiple clients in consumer goods manufacturing industry
+- Develop an integrated web traffic, e-commerce & ad spending reporting platform with Google Analytics, Google Search Ad 360, eBay Sell, Amazon MWS REST APIs, using Shiny and httr on a Linux server
+- Plan and conduct A/B testing on client websites, sharing results for improving creative designs and optimizing search and display buying
+- Product lifecycle analysis with sales and specification data to support client's effort in product planning & design
+- Ad hoc data profiling, modeling and reporting on clients' request
 
     
     
 #### Universal McCann, IPG Mediabrands 	
 Senior Analyst, Performance Analytics / New York, NY / July - Oct 2017
 
-- Database schemas and data migration plans for two new clients with MS SQL Server
-- Client-specific ETL pipelines, quality assurance and Tableau dashboards
-- Version control and encapsulation solution for data preprocessing pipeline with R6 OO system
-- Internal memo on data manipulation, with R and SQL
+- Database schemas and data migration plans with MS SQL Server
+- Client-specific ETL pipelines, quality assurance routines and Tableau dashboards
+- Version control and encapsulation solution for data preprocessing and exploratory analysis with R6 OO system
 
     
     
@@ -60,11 +49,9 @@ Graduate Assistant / College Park, MD / Sep 2016 - Apr 2017
 #### CR Snow  
 CRM Analyst / Shanghai, China / Jan - Dec 2015
 
-- Data querying, cleaning, and modeling from sales and survey databases for research topics such as customer retention, segmentation, and lifetime value
-- Interactive dashboards with graphic representations of analytical results
-- Standard operating procedure (SOP) in analytical routines
-- Contributed to: a browser-based data entry and reporting terminal for regional distributors
-
+- Querying, cleaning, and modeling with sales and survey data for customer retention, segmentation, and lifetime value
+- Serve as a data-driven advisor on DM, SMS, loyalty program, and other customer outreach initiatives
+- Build and deliver competitve profile and benchmarking in industry analysis
 
     
     
@@ -72,9 +59,8 @@ CRM Analyst / Shanghai, China / Jan - Dec 2015
 Marketing Research Associate / Beijing, China / Aug - Dec 2014
 
 - Gather, compile and analyze automotive market trends from public and proprietary sources
-- Sales and marketing reports with tables, charts, infographics and other deliverables
-- Choice modeling from consumer survey data
-- Web traffic: conversion patterns and trends, audience behavior, optimization suggestions
+- Sales and marketing reports with tables, charts, infographics and other deliverables, interactive dashboards with Excel and VBA
+- Conjoint analysis with consumer survey data
 
 
     
@@ -95,34 +81,55 @@ Account Service Intern / Shanghai, China / Feb - July 2012
 **Michigan State University** / BA Advertising / 2009 - 2014
 
 <hr/>
-### Skill/Interest
- 
-#### R
+### Specialty & Interest
+    
+#### Industry
 
-- presentation: Shiny, ggplot2, plotly, rmarkdown, knitr
-- modeling: cba, mlr, caret, rpart, Rstanarm, TensorFlow(w.Python)
-- infrastructure: odbc, httr,  plumber
-
-#### Other technical interests
-
-- Clojure (Incanter), GNU C , C++,  Node.js, SPSS, VBA
-- Ubuntu Server, Docker, MySQL, SQL Server, PostgreSQL
-- Git, Subversion
-
+- Automotive
+- Quick-serve Restaurant
+- Financial
+- Manufacturing
+    
+    
 #### Analysis Topics
 
 - Customer lifetime value
 - Customer segmentation
+- A/B/n testing
 - Churn prediction
 - Conversion attribution
-- Media ROI
-- Demand forecasting
-... 
+- Demand/market share forecasting
+- Product lifecycle 
+- Consumer choice
+- Survey & experimental design
+- ... 
 
-#### Statistical methods
+#### Statistical Methods
 
-- regression: GLM, GAM, ARIMA
+- regression: GLM, GAM, glmnet
 - dimension reduction: PCA, MCA
 - clustering: k-means, POPC
 - bayesian: MCMC
-- tree: CART
+- tree: CART, ranger
+- testing: t-test, power analysis
+
+#### R
+
+- presentation: shiny, shinydashboard, ggplot2, plotly, rmarkdown, knitr
+- modeling: cba, mlr, caret, rpart, Rstanarm, TensorFlow(w.Python)
+- infrastructure: odbc, httr,  plumber, fiery, feather
+
+#### Other
+
+- JavaScript, Excel/VBA, Python
+- Linux, Docker, MySQL, SQL Server, PostgreSQL
+- Git, Subversion
+- Tableau
+
+
+
+<hr/>
+### R Consulting
+Consulting assignments on R programming and development issues are welcome. I provide this service at a reasonable rate, via email or on-site. I do not re-write R codes into any other language, or vice versa. Please inquire for availability and work samples. 
+<hr/>
+_a live copy of [this document](http://iqis.netlify.com/vitae)_
