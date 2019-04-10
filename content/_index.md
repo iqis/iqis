@@ -1,5 +1,6 @@
 ---
-title: Home
+title: "Home"
+output: word_document
 ---
 
 <img src = "img/my_website.png" style = "max-width: 60%; float:middle; clip: rect(0px,60px,200px,0px); display:none" alt = "My Website!!!!" />

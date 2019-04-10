@@ -1,5 +1,8 @@
 ---
-title: 'Curriculum Vitae'
+title: "Curriculum Vitae"
+output:
+  word_document: default
+  pdf_document: default
 ---
 
 **Siqi Zhang**  
