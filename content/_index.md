@@ -17,8 +17,8 @@ From 2012, I have made a living writing R codes. My works have served several ca
 
 I have developed several R packages for fun; I'm hoping to get them on CRAN. I use `require()`, because it is a verb. I advocate for reproduceable and extensible analysis. I also know a little of (by order of fondness): Clojure, JavaScript (React, d3.js), Excel & VBA, Python, C++. I went to Michigan State University and University of Maryland; Both are quite alright. I support the [Free Software Foundation](http://www.fsf.org).
 
-I always welcome new work opportunities; other than this, the current life priority is to replace my 2014 Fiat 500 with a light truck or a minivan. 
 
+    
 ### Info
 :house:: Delaware Water Gap, PA :repeat: Jersey City, NJ
 
@@ -29,10 +29,8 @@ I always welcome new work opportunities; other than this, the current life prior
 
 - [Twitter](http://twitter.com/iqis_gnahz)
 - [GitHub](http://github.com/iqis)
-- LinkedIn (`NA`)
-- Facebook (`NA`)
 
-
+    
 ### Articles
 <hr/>
 
