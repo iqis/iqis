@@ -1,5 +1,11 @@
 ---
-title: 'Curriculum Vitae'
+title: "Curriculum Vitae"
+geometry: margin=1in
+output:
+  word_document: default
+  pdf_document: default
+sansfont: Chivo Light
+fontsize: 12pt
 ---
 
 **Siqi Zhang**  
@@ -24,7 +30,7 @@ Master Generalist in Analytics / Garden City, NY / Nov 2017 - Sep 2018
 - Lead team on market research and digital strategies for multiple clients in consumer goods manufacturing industry
 - Develop an integrated web traffic, e-commerce & ad spending reporting platform with Google Analytics, Google Search Ad 360, eBay Sell, Amazon MWS REST APIs, using Shiny and httr on a Linux server
 - Plan and conduct A/B testing on client websites, sharing results for improving creative designs and optimizing search and display buying
-- Product lifecycle analysis with sales and specification data to support client's effort in product planning & design
+- Product lifecycle analysis with sales, return and specification data to support client's effort in product planning & design
 - Ad hoc data profiling, modeling and reporting on clients' request
 
     
@@ -51,7 +57,7 @@ CRM Analyst / Shanghai, China / Jan - Dec 2015
 
 - Querying, cleaning, and modeling with sales and survey data for customer retention, segmentation, and lifetime value
 - Serve as a data-driven advisor on DM, SMS, loyalty program, and other customer outreach initiatives
-- Build and deliver competitve profile and benchmarking in industry analysis
+- Build and deliver competitive profile and benchmark in industry analysis
 
     
     
@@ -106,12 +112,11 @@ Account Service Intern / Shanghai, China / Feb - July 2012
 
 #### Statistical Methods
 
-- regression: GLM, GAM, glmnet
+- regression: GLM, GAM, glmnet, ANOVA
 - dimension reduction: PCA, MCA
 - clustering: k-means, POPC
-- bayesian: MCMC
+- bayesian: MCMC, bandit
 - tree: CART, ranger
-- testing: t-test, power analysis
 
 #### R
 
