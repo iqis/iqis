@@ -1,8 +1,10 @@
 ---
 title: "Curriculum Vitae"
 output:
-  word_document: default
   pdf_document: default
+fontsize: 12pt
+geometry: margin=1in
+sansfont: Chivo Light
 ---
 
 **Siqi Zhang**  
@@ -27,7 +29,7 @@ Master Generalist in Analytics / Garden City, NY / Nov 2017 - Sep 2018
 - Lead team on market research and digital strategies for multiple clients in consumer goods manufacturing industry
 - Develop an integrated web traffic, e-commerce & ad spending reporting platform with Google Analytics, Google Search Ad 360, eBay Sell, Amazon MWS REST APIs, using Shiny and httr on a Linux server
 - Plan and conduct A/B testing on client websites, sharing results for improving creative designs and optimizing search and display buying
-- Product lifecycle analysis with sales and specification data to support client's effort in product planning & design
+- Product lifecycle analysis with sales, return and specification data to support client's effort in product planning & design
 - Ad hoc data profiling, modeling and reporting on clients' request
 
     
