@@ -1,10 +1,11 @@
 ---
 title: "Curriculum Vitae"
-output:
-  pdf_document: default
-fontsize: 12pt
 geometry: margin=1in
+output:
+  word_document: default
+  pdf_document: default
 sansfont: Chivo Light
+fontsize: 12pt
 ---
 
 **Siqi Zhang**  
@@ -56,7 +57,7 @@ CRM Analyst / Shanghai, China / Jan - Dec 2015
 
 - Querying, cleaning, and modeling with sales and survey data for customer retention, segmentation, and lifetime value
 - Serve as a data-driven advisor on DM, SMS, loyalty program, and other customer outreach initiatives
-- Build and deliver competitve profile and benchmarking in industry analysis
+- Build and deliver competitive profile and benchmark in industry analysis
 
     
     
@@ -111,12 +112,11 @@ Account Service Intern / Shanghai, China / Feb - July 2012
 
 #### Statistical Methods
 
-- regression: GLM, GAM, glmnet
+- regression: GLM, GAM, glmnet, ANOVA
 - dimension reduction: PCA, MCA
 - clustering: k-means, POPC
-- bayesian: MCMC
+- bayesian: MCMC, bandit
 - tree: CART, ranger
-- testing: t-test, power analysis
 
 #### R
 
