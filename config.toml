@@ -7,7 +7,7 @@ ignoreFiles = ["\\.Rmd$", "_files$", "_cache$"]
 hasCJKLanguage = true
 preserveTaxonomyNames = true
 enableEmoji = true
-footnotereturnlinkcontents = "↩"
+footnotereturnlinkcontents = ""
 
 [permalinks]
     post = "/post/:year/:month/:day/:slug/"
@@ -16,14 +16,10 @@ footnotereturnlinkcontents = "↩"
 #    name = "Categories"
 #    url = "categories/"
 #    weight = 1
-#[[menu.main]]
-#    name = "Twitter"
-#    url = "http://twitter.com/iqis_gnahz"
-#    weight = 2
-#[[menu.main]]
-#    name = "GitHub"
-#    url = "http://github.com/iqis"
-#    weight = 3
+[[menu.main]]
+    name = "Vitae"
+    url = "/vitae"
+    weight = 2
 
 [[menu.feed]]
     name = "rss"
