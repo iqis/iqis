@@ -84,12 +84,12 @@ Wow, your R is Rancid!!!</code></pre>
        &quot;package:stats&quot;)</code></pre>
 <p>Now when we build a model; the coefficients looks normal, but are completely off. You can compare the this with the result on your own computer.</p>
 <pre class="r"><code>lm(mpg ~ ., data = mtcars)$coefficients</code></pre>
-<pre><code>##   (Intercept)           cyl          disp            hp          drat 
-## -0.0953656838  0.0008637953 -0.0001033639  0.0001665118 -0.0061010399 
-##            wt          qsec            vs            am          gear 
-##  0.0287979944 -0.0063640357 -0.0024630372 -0.0195347355 -0.0050802251 
-##          carb 
-##  0.0015457348</code></pre>
+<pre><code>##  (Intercept)          cyl         disp           hp         drat 
+##  34.82669116  -0.31545030   0.03774755  -0.06080861   2.22804496 
+##           wt         qsec           vs           am         gear 
+## -10.51676888   2.32408868   0.89947906   7.13390996   1.85525259 
+##         carb 
+##  -0.56448847</code></pre>
 <p>In the above, we saved a copy of the original function in the base package. If we didn’t do that, we would have create an infinite recursion through self-refernce, such as:</p>
 <pre class="r"><code>reassign(&quot;paste&quot;,
          function(...) paste(...),
