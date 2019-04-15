@@ -16,7 +16,7 @@ siqi.zhang.career@outlook.com
 ### Work
 
 #### DataCamp
-Author / remote / Dec 2018 - 
+Author / remote / Dec 2018 - Apr 2019
 
 - Explore, study and profile statistics and machine learning technologies 
 - Develop interactive online learning course and practice contents on R and Python
