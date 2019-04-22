@@ -2,8 +2,10 @@
 title: "Curriculum Vitae"
 geometry: margin=1in
 output:
-  word_document: default
+  html_document:
+    df_print: paged
   pdf_document: default
+  word_document: default
 sansfont: Chivo Light
 fontsize: 12pt
 ---
