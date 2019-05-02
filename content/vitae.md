@@ -42,7 +42,7 @@ Senior Analyst, Performance Analytics / New York, NY / July - Oct 2017
 
 - Database schemas and data migration plans with MS SQL Server
 - Client-specific ETL pipelines, quality assurance routines and Tableau dashboards
-- Version control and encapsulation solution for data preprocessing and exploratory analysis with R6 OO system
+- Version control and encapsulation solution for data preprocessing and exploratory analysis
 
     
     
