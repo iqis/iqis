@@ -18,7 +18,8 @@ categories: []
 <p>The key factor comes from usability. Python does not serve the user nearly as well as R does. In stern and stark contrast with Python’s reputation, beginners of either language often find Python’s syntax convoluted, its program verbose, and usage inconvenient. This is not on the fault of Python <em>per se</em>. R is far more superior in usability because it is built from the ground up as an interactive language.</p>
 <p>This article is going to be an in-detail analysis on R’s syntactical features, comparing with that of Python side-by-side.</p>
 <p>Some people arrive at “Python is better than R.” via “Python is a powerful, general purpose language”, and “R is a domain-specific language”.</p>
-<p>The statements are correct, but the conclusion is not. What’s wrong? According to the (Rule of the Least Power)[<a href="https://www.w3.org/2001/tag/doc/leastPower.html" class="uri">https://www.w3.org/2001/tag/doc/leastPower.html</a>], a princple codified by the W3C:</p>
+<p>The statements are correct, but the conclusion is not. What’s wrong?
+According to the (Rule of the Least Power)[<a href="https://www.w3.org/2001/tag/doc/leastPower.html" class="uri">https://www.w3.org/2001/tag/doc/leastPower.html</a>], a princple codified by the W3C:</p>
 <blockquote>
 <p>[Programming] in less powerful languages increases the flexibility with which information can be reused: the less powerful the language, the more you can do with the data stored in that language.</p>
 </blockquote>
@@ -31,12 +32,14 @@ categories: []
 <p>Therefore, with respect to data science, Python is a lower-level programming language, and is most suitable for use beneath the friendly user interface laid out by R. Specifically, most deep learning capabilities in Python, such as <em>Keras</em>, <em>TensorFlow</em>, all have mature adaptations in R.</p>
 <p>For most people, a familarity with Python will only be useful for reading and porting existing codebases.</p>
 <p>Using Python to approach analytical issues is like making sculpture with a chainsaw.</p>
-<p><img src = "https://upload.wikimedia.org/wikipedia/commons/8/8e/ChainsawartinBrienz.JPG", style = "max-width: 30%; padding: 20px 20px 20px 20px"/></p>
+<p>&lt;img src = “<a href="https://upload.wikimedia.org/wikipedia/commons/8/8e/ChainsawartinBrienz.JPG" class="uri">https://upload.wikimedia.org/wikipedia/commons/8/8e/ChainsawartinBrienz.JPG</a>”, style = “max-width: 30%; padding: 20px 20px 20px 20px”/&gt;</p>
 <p>It is possible to achieve great results, however only by way of struggling with the tool.</p>
 <div id="r-has-a-mature-ecosystem" class="section level3">
 <h3>R has a mature ecosystem</h3>
 <p>Rkward, Rcommander, Jamovi, and else.</p>
-<p>Python does not have a sophisticated IDE or text editor for analytics. Wrangler from yhat seems to be stagnant in development Spyder is …</p>
+<p>Python does not have a sophisticated IDE or text editor for analytics.
+Wrangler from yhat seems to be stagnant in development
+Spyder is …</p>
 <p>Jupyter is all about the “Py” in its name. I rarely see Julia or R user use the notebook.</p>
 <p>It is … to remember that Python is a language with a record of hard fork between version 2 and 3, aftermath still evident of this day. Nobody has counted the time when some Python novice trodded onto a v.2-only solution on StackOverflow, and pulled his hair in agony.</p>
 </div>
@@ -84,7 +87,8 @@ profile$id
 `[`(profile, &quot;name&quot;)
 `[[`(profile, &quot;gender&quot;)
 `$`(profile, id)</code></pre>
-<p>In Python, in the follwing code example, keyword <code>import</code> does invoke underlying functions. But it is very obfuscated.</p>
+<p>In Python,
+in the follwing code example, keyword <code>import</code> does invoke underlying functions. But it is very obfuscated.</p>
 <pre class="python"><code>import numpy as np</code></pre>
 <p>It is not unusual to see beginner getting caught up in the syntax, which is reasonably complex.</p>
 <p>It’s harder to get started with, and you’ll find yourself hitting the ceiling pretty fast.</p>
@@ -92,18 +96,29 @@ profile$id
 <div id="data-types" class="section level3">
 <h3>Data Types</h3>
 <ul>
-<li><code>vector</code></li>
+<li><code>vector</code>
+<ul>
 <li>Homogeneous, flat, 1D</li>
-<li><code>list</code></li>
+</ul></li>
+<li><code>list</code>
+<ul>
 <li>Heterogeneous, recursive, 1D</li>
-<li><code>matrix</code>,</li>
+</ul></li>
+<li><code>matrix</code>,
+<ul>
 <li>Vector of vectors, 2D</li>
-<li><code>data.frame</code></li>
+</ul></li>
+<li><code>data.frame</code>
+<ul>
 <li>List of vectors or lists, 2D</li>
-<li><code>array</code></li>
+</ul></li>
+<li><code>array</code>
+<ul>
 <li>Homogeneous, 1 to Inf dimensions</li>
+</ul></li>
 </ul>
-<p>Perl has <code>array</code>, <code>hash</code> Python has `</p>
+<p>Perl has <code>array</code>, <code>hash</code>
+Python has `</p>
 </div>
 <div id="namespace" class="section level3">
 <h3>Namespace</h3>
@@ -111,7 +126,8 @@ profile$id
 <p>In R, a namespace can only be defined by a package, and it is not likely possible to have nested namespaces.</p>
 <p>One would use <code>library()</code> or <code>reuiqre()</code> to attach a namespace (from a package) to the search path. Once a namespace is attached to the search path, all consequent invokations of a symbol will be evaluated throught the namesapce, until it is detached with <code>detach()</code>.</p>
 <p><code>environment</code>s and <code>list</code>s can also be used in the place of a namespace when evaluating a symbol, with <code>attach()</code> and <code>with()</code>.</p>
-<p>A namespace searth path determines the search order for a symbol(name). The search will begin at the most recently attached namespace. there is no need to qualify a symbol.</p>
+<p>A namespace searth path determines the search order for a symbol(name). The search will begin at the most recently attached namespace.
+there is no need to qualify a symbol.</p>
 <p>Python follows Java style to use the <code>.</code> notation. It is mandatory to qualify a symbol.</p>
 <p>Otherwise, scoping rules are similar between the two languages.</p>
 <p>This makes Python scripts more verbose, and breaks the analyst’s rythem when rapidly executing exploratory tasks.</p>
@@ -198,6 +214,9 @@ for (num in numbers){
 <pre class="python"><code>numbers = [1,2,3,4,5]
 for num in numbers:
     print(num)</code></pre>
-<p><a href="http://panicz.github.io/pamphlet/">A Pamphlet against R</a> In spite of the porovocative title, this pamphlet has only a minute amount of reference to R, and weighs more on discussing the benefits of Scheme, a Lisp dialect. <a href="https://www.burns-stat.com/pages/Tutor/R_inferno.pdf">R Inferno</a> This is <em>the</em> epic on R pecularities and screw-ups. Contrasting with the the tile of the equivalent publication regarding JavaScript, <a href="http://bonsaiden.github.io/JavaScript-Garden/">JavaScript <em>Garden</em></a>, R users’ self-hate (or, self-pity) is quite evident.</p>
+<p><a href="http://panicz.github.io/pamphlet/">A Pamphlet against R</a>
+In spite of the porovocative title, this pamphlet has only a minute amount of reference to R, and weighs more on discussing the benefits of Scheme, a Lisp dialect.
+<a href="https://www.burns-stat.com/pages/Tutor/R_inferno.pdf">R Inferno</a>
+This is <em>the</em> epic on R pecularities and screw-ups. Contrasting with the the tile of the equivalent publication regarding JavaScript, <a href="http://bonsaiden.github.io/JavaScript-Garden/">JavaScript <em>Garden</em></a>, R users’ self-hate (or, self-pity) is quite evident.</p>
 </div>
 </div>
