@@ -118,7 +118,7 @@ Now when we build a model; the coefficients looks normal, but are completely off
 lm(mpg ~ ., data = mtcars)$coefficients
 ```
 
-In the above, we saved a copy of the original function in the base package. If we didn't do that, we would have create an infinite recursion through self-refernce, such as:
+In the above, we saved a copy of the original function in the base package, concealing it with prepending the name wit a `.`. If we didn't do that, we would have create an infinite recursion through self-refernce, such as:
 ```{r, eval = FALSE}
 reassign("paste",
          function(...) paste(...),
@@ -129,7 +129,7 @@ reassign("paste",
 ```{r, eval = FALSE}
 paste("foo", "bar")
 ```
-Running this will crash the R session. If the user didn't save documents before setting off this bomb,it's obviously too bad.
+Running this will have an effect of crashing the R session. If the user didn't save documents before setting off this bomb,it's obviously too bad. Another way to create trouble.
 
 ## Further Damage ##
     
