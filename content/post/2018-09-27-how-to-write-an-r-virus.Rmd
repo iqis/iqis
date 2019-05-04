@@ -17,8 +17,8 @@ A [computer virus](https://en.wikipedia.org/wiki/Computer_virus) is a piece of p
 This is not very hard to accomplish with R, as I will demonstrate in this article.  
 
   
-##Replicate##
-
+## Replicate ##
+    
 The [_virus_](https://gist.github.com/iqis/e4030f6af45d0d3ebae21f2816c1fc58) exploits R's initilization script, `.Rprofile`. When R starts up, it is going to look for this file in the current working directory and the user's home directory, then runs everything in it:
 ```{r, eval = FALSE}
 {
@@ -48,9 +48,10 @@ Wow, your R is Rancid!!!
 ```
 Any project that started by the user is going to have its project folder infected. Likewise, if someone copy-and-pasted the R project folder to another computer, and start R from there, his home folder is going to be infected.
 
+As R is an interpreted language, this seems to be the only way to infection. To conceal our malicous code, there is a way of packing a Shiny app into a Windows executable through using a tool called [RInno](https://ficonsulting.github.io/RInno/), which has [Electron](https://electronjs.org/) behind itself.
   
-##Damage##
-
+## Damage ##
+    
 It looks like that the replication part of the virus is taken care of. What, then, are some malicious scripts that we can have fun with? 
 
 There could be countless ways.
@@ -128,16 +129,18 @@ reassign("paste",
 ```{r, eval = FALSE}
 paste("foo", "bar")
 ```
-Running this will crash the R session. If the user didn't save documents before setting off this bomb, too bad.
+Running this will crash the R session. If the user didn't save documents before setting off this bomb,it's obviously too bad.
 
-There are yet more ways to damages. For starters, how about deleting every `csv` file the user has in the working directory? 
+## Further Damage ##
+    
+There are yet more ways to our streak of mischief. For starters, how about deleting every `csv` file the user has in the working directory? 
 ```{r eval = FALSE}
 file.remove(list.files(getwd(), 
                        ".csv",
                        recursive = TRUE)
 ```
-
-Doing something on the file system can mean a lot.
+    
+Doing something on the file system is a big step foward form just messing with their R session.
 
 From annoying to destructive, the level of naughtiness only limited by on your imagination. With some deliberation, you can ruin someone's life in a very meaningful way. 
 
@@ -145,10 +148,10 @@ Here are some futher ideas:
 
   -  Bloat the user's disk space with meaningless data
   -  Give wrong results only _sometimes_ when a function is called
-  -  Use Rstudio API to mess with the user's scripts
+  -  Use [Rstudio API](https://rstudio.github.io/rstudio-extensions/pkgdown/rstudioapi/index.html) to mess with the user's scripts in the editor, or some other wild sh*t.
 
-
-
+    
+    
 **Note**  
 You also have the choice of putting any of the malicious programs in `.First()` and `.Last()` functions, which will run at the beginning and the end of a session. See the [R Manual](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Startup.html) for details. 
 

