@@ -22,6 +22,8 @@ Leonard Lodish from University of Pennsylvatia's Wharton School of Business.
 
 [John Little Bio](https://dspace.mit.edu/bitstream/handle/1721.1/58104/Little_Profile_03_07_2009_Final_edit%20%282%29.pdf?sequence=1&isAllowed=y)
 
+[A Media Selection Calculus](https://dspace.mit.edu/bitstream/handle/1721.1/48402/mediaselectionca00litt.pdf;sequence=1)
+
 [Models and Mangers: the Concept of a Decision Calculus](https://archive.org/details/modelsmanagersco00litt)
 
 [Choice in Interactive Environments](http://pages.stern.nyu.edu/~tmeyvis/interactive.pdf)
@@ -30,7 +32,7 @@ Leonard Lodish from University of Pennsylvatia's Wharton School of Business.
 
 [Choice and the Internet: From Clickstream toResearch Stream](https://www0.gsb.columbia.edu/mygsb/faculty/research/pubfiles/644/fulltext.pdf)
 
-[A Media Selection Calculus](https://dspace.mit.edu/bitstream/handle/1721.1/48402/mediaselectionca00litt.pdf;sequence=1)
+
 
 
 ### Leonard Lodish
