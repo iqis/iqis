@@ -1,0 +1,68 @@
+---
+title: Fun with Classical Marketing Engineering Models
+author: Siqi
+date: '2019-05-04'
+slug: fun-with-classical-marketing-engineering-models
+categories: []
+tags: []
+---
+
+
+Recently when discussing Marketing Mix Modeling (MMM) with a colleague, came to mind were a handful of classical models: "ADBUDG", "ADSPLIT", "BRANDAID", and "CALLPLAN". I have had a brief entouner with these early in my career. 
+
+Apparent from the all-caps spelling, these models came from the late 60's and early 70's (cue "UNIX", "FORTRAN", "LISP", etc). Similarly in today's technosphere, there are "...ly", "...fy" and "...lify". A brief search had 
+
+
+Incorportated into the commercially available media planning software MEDIAC 
+
+
+Stemed from works by John D.C. Little of MIT's Sloan School of Management, who is thought to be the founder of Marketing Engineering. His son later co-founded MathWorks, and written an early version of MATLAB
+
+Leonard Lodish from University of Pennsylvatia's Wharton School of Business. 
+
+[John Little Bio](https://dspace.mit.edu/bitstream/handle/1721.1/58104/Little_Profile_03_07_2009_Final_edit%20%282%29.pdf?sequence=1&isAllowed=y)
+
+[Models and Mangers: the Concept of a Decision Calculus](https://archive.org/details/modelsmanagersco00litt)
+
+[Choice in Interactive Environments](http://pages.stern.nyu.edu/~tmeyvis/interactive.pdf)
+
+[From Decision Support to Decision Automation: A2020 Vision](https://www0.gsb.columbia.edu/mygsb/faculty/research/pubfiles/950/950.pdf)
+
+[Choice and the Internet: From Clickstream toResearch Stream](https://www0.gsb.columbia.edu/mygsb/faculty/research/pubfiles/644/fulltext.pdf)
+
+[A Media Selection Calculus](https://dspace.mit.edu/bitstream/handle/1721.1/48402/mediaselectionca00litt.pdf;sequence=1)
+
+
+### Leonard Lodish
+
+[A Marketing Decision Support System for Retailers](https://www.researchgate.net/publication/227441977_A_Marketing_Decision_Support_System_for_Retailers)
+
+
+
+### ? 
+[Resource Allocation: Marketing Engineering Technical Note](http://www.decisionpro.biz/images/stories/technical-notes/TN10%20-%20Resource%20Allocation%20Technical%20Note.pdf)
+
+
+
+A seemingly abandoned R package `tme`, "Teaching Marketing Engineering":
+
+[package tme](https://rdrr.io/rforge/tme/)
+
+- MEDIAC
+  - 
+
+- ADGUDG
+  - A
+  
+- ADSPLIT
+
+  - 
+  
+- BRANDAID
+
+  - 
+  
+- CALLPLAN
+
+  - 
+  
