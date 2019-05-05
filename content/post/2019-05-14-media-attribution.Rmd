@@ -1,0 +1,22 @@
+---
+title: Media Attribution
+author: Siqi
+date: '2019-05-14'
+slug: media-attribution
+categories: []
+tags: []
+---
+
+[Attribution Theory: The Two Best Models for Algorithmic Marketing Attribution – Implemented in Apache Spark and R](http://datafeedtoolbox.com/attribution-theory-the-two-best-models-for-algorithmic-marketing-attribution-implemented-in-apache-spark-and-r/)
+
+[Marketing Channel Attribution With Markov Models In R](https://www.bounteous.com/insights/2016/06/30/marketing-channel-attribution-markov-models-r/?ns=l)
+
+[Market Mix Modeling (MMM)101](https://towardsdatascience.com/market-mix-modeling-mmm-101-3d094df976f9)
+
+[Technical Notes](http://www.decisionpro.biz/business-users/training/technical-notes/category/5-technical-notes)
+
+[Advertising Diminishing Returns & Saturation](https://analyticsartist.wordpress.com/2015/03/08/advertising-diminishing-returns-saturation/)
+
+[Brand and Price Advertising in Online Markets](https://lawprofessors.typepad.com/antitrustprof_blog/files/branding3.pdf)
+
+[Evaluating Advertising Effectiveness ThroughAdvertising Response Modeling (ARM)](https://www.uwcentre.ac.cn/huanghuai/wp-content/uploads/2011/03/evaluatingadfs.pdf)
