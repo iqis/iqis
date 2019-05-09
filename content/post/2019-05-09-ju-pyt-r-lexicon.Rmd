@@ -1,0 +1,11 @@
+---
+title: Ju-Pyt-R  Lexicon
+author: Siqi Zhang
+date: '2019-05-09'
+slug: ju-pyt-r-lexicon
+categories: []
+tags: []
+---
+
+
+[](http://www.johnmyleswhite.com/notebook/2012/04/09/comparing-julia-and-rs-vocabularies/)
