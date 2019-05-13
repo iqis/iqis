@@ -8,4 +8,6 @@ tags: []
 ---
 
 
-[](http://www.johnmyleswhite.com/notebook/2012/04/09/comparing-julia-and-rs-vocabularies/)
+This post is an update to the content from [this blog post](http://www.johnmyleswhite.com/notebook/2012/04/09/comparing-julia-and-rs-vocabularies/) from 2012. There has been a lot of improvement to the Julia language. 
+
+
