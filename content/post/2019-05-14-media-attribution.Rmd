@@ -7,6 +7,29 @@ categories: []
 tags: []
 ---
 
+
+
+In the early 20th century, a successful merchant is vexed by spending on advertising: _Half the money I spend on advertising is wasted; the trouble is, I don't know which half._
+
+The problem is two-fold: advertising is ineffective, and it is hard to pin-point the source of the inefficiency.
+
+
+Had John Wanamaker live to see today's world, would he maintain the same assertion on the unavoidable inefficiency of advertising? 
+
+Wanamaker's adage is probably the most invoked quote in illustrating the neccesity of media attribution nowadays.
+
+
+Advanced analytics in media and adveising has progressed to 
+
+accountable 
+
+
+
+R Accesories for Media and Advertising(RAMA)
+
+
+Media attritbution 
+
 [Attribution Theory: The Two Best Models for Algorithmic Marketing Attribution – Implemented in Apache Spark and R](http://datafeedtoolbox.com/attribution-theory-the-two-best-models-for-algorithmic-marketing-attribution-implemented-in-apache-spark-and-r/)
 
 [Marketing Channel Attribution With Markov Models In R](https://www.bounteous.com/insights/2016/06/30/marketing-channel-attribution-markov-models-r/?ns=l)

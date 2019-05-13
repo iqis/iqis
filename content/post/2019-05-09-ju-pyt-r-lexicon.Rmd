@@ -11,3 +11,6 @@ tags: []
 This post is an update to the content from [this blog post](http://www.johnmyleswhite.com/notebook/2012/04/09/comparing-julia-and-rs-vocabularies/) from 2012. There has been a lot of improvement to the Julia language. 
 
 
+As a response to Python's ascension to a popular choice for analytics, this post also includes Python.
+ Because this is a great opportunity to 
+
