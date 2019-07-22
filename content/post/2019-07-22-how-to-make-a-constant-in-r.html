@@ -25,7 +25,9 @@ reg_binding &lt;- function(x = &quot;I&#39;m a regular binding.&quot;){
 }
 
 # `makeActiveBinding()` works like `assign()`
-makeActiveBinding(&quot;act_binding&quot;, env = parent.frame(), fun = function(x = &quot;I&#39;m an active binding.&quot;){
+makeActiveBinding(&quot;act_binding&quot;, 
+                  env = parent.frame(), 
+                  fun = function(x = &quot;I&#39;m an active binding.&quot;){
   print(x)
 })</code></pre>
 <p><em>Note: the following code blocks that evaluates <code>act_binding</code> contain a bug from RMarkdown, therefore the outputs are not printed.</em></p>
@@ -66,8 +68,10 @@ foo</code></pre>
 <p>Bye-bye!</p>
 <div id="see-also" class="section level4">
 <h4>See also</h4>
-<p>more on active binding:
-- <a href="https://colinfay.me/ractivebinfing/">R and active binding (and pizza)</a> - Colin Fay
-- <a href="https://yihui.name/en/2018/08/make-active-binding/">makeActiveBinding(): The Most Magical Hidden Gem in Base R</a> - Yihui Xie</p>
+<p>more on active binding:</p>
+<ul>
+<li><a href="https://colinfay.me/ractivebinfing/">R and active binding (and pizza)</a> - Colin Fay</li>
+<li><a href="https://yihui.name/en/2018/08/make-active-binding/">makeActiveBinding(): The Most Magical Hidden Gem in Base R</a> - Yihui Xie</li>
+</ul>
 </div>
 </div>

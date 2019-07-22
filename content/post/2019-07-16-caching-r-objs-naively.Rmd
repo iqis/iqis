@@ -1,0 +1,119 @@
+---
+title: Handling Large Data in R, the Naive Way
+author: Siqi Zhang
+date: '2019-07-16'
+slug: naive-caching-r-objects-onto-disk
+categories:
+  - R
+tags: []
+---
+
+Recently I ran accross a problem: The program I'm writing reads from hundreds of large data sets totaling in tens of gigabytes, and the memory on my or any potential user's machine simply won't fit. 
+
+Ideally, for caching objects on the disk, I would have wanted to use more sophisticated solusions such as Roger Peng's (`filehash`)[https://cran.r-project.org/web/packages/filehash/index.html]. Instead, I just wanted to simply dump everything onto the disk, and read & process each as needed, with the following solution: 
+
+- Write each data set as a binary file to the disk
+- Make a function that reads from its own binary file when called
+
+It goes as follows:
+```{r}
+stash <- function(object, 
+                  dir_path = tempdir()){
+        file_name <- paste0(paste0(sample(c(letters, LETTERS, 0:9), 20, TRUE), collapse = ""), ".RStash")
+        file_path <- file.path(dir_path, file_name)
+        saveRDS(object, file_path)
+        f <- function(){
+                if (!file.exists(file_path)){
+                        stop("stash file missing.")
+                } else {
+                        readRDS(file_path)
+                }
+        }
+
+        structure(f,
+                  class = c("stash_pointer", class(f)),
+                  file_path = file_path,
+                  obj_size = format(object.size(object), unit = "MB", digits = 2),
+                  obj_class = class(object)
+                  )
+}
+
+
+```
+
+
+So calling `stash()` saves a binary of the object onto the disk, and returns a function that is going to read from this the file when called, with relevant metadata. I just call the cache on the disk "stash" and this function a "stash pointer".  
+
+
+Let's test it out.
+
+```{r}
+mtcars2 <- stash(mtcars)
+mtcars2() 
+```
+Perfect! 
+
+
+Let's add some housekeeping funcitions, too.
+```{r}
+print.stash_pointer <- function(x){
+        cat(paste0("<stash_pointer>", " `", attr(x, "obj_class")[1],"` ", attr(x, "obj_size"), "\n"))
+        cat("- ", paste(attr(x, "file_path")))
+}
+
+# delete the cache on disk
+clear_stash <- function(stash_pointer){
+        file_path <- attr(stash_pointer, "file_path")
+        if (file.exists(file_path)){
+                file.remove(file_path)      
+        } 
+}
+
+stash_exists <- function(stash_pointer){
+        file.exists(attr(stash_pointer, "file_path"))
+}
+
+is_stash_pointer <- function(x){
+        inherits(x, "stash_pointer")
+}
+```
+
+
+
+```{r}
+mtcars2
+```
+
+```{r}
+is_stash_pointer(mtcars2)
+```
+
+```{r}
+clear_stash(mtcars2)
+```
+
+```{r}
+stash_exists(mtcars2)
+```
+
+```{r}
+df_list <- list(mtcars, iris, chickwts, PlantGrowth, USArrests)
+```
+
+Let's utilize `purrr`'s functional programming interface and `stash()` everything in `df_list`:
+```{r}
+require(purrr)
+stash_pointer_list <- map(df_list, stash)
+```
+
+The result is a list of `stash_pointer`s:
+```{r}
+stash_pointer_list
+```
+
+See the column name of every data frame:
+```{r}
+map(stash_pointer_list, ~ exec(.) %>% colnames())
+```
+
+Cheers! 

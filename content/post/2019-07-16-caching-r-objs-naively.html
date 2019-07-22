@@ -1,0 +1,148 @@
+---
+title: Handling Large Data in R, the Naive Way
+author: Siqi Zhang
+date: '2019-07-16'
+slug: naive-caching-r-objects-onto-disk
+categories:
+  - R
+tags: []
+---
+
+
+
+<p>Recently I ran accross a problem: The program I’m writing reads from hundreds of large data sets totaling in tens of gigabytes, and the memory on my or any potential user’s machine simply won’t fit.</p>
+<p>Ideally, for caching objects on the disk, I would have wanted to use more sophisticated solusions such as Roger Peng’s (<code>filehash</code>)[<a href="https://cran.r-project.org/web/packages/filehash/index.html" class="uri">https://cran.r-project.org/web/packages/filehash/index.html</a>]. Instead, I just wanted to simply dump everything onto the disk, and read &amp; process each as needed, with the following solution:</p>
+<ul>
+<li>Write each data set as a binary file to the disk</li>
+<li>Make a function that reads from its own binary file when called</li>
+</ul>
+<p>It goes as follows:</p>
+<pre class="r"><code>stash &lt;- function(object, 
+                  dir_path = tempdir()){
+        file_name &lt;- paste0(paste0(sample(c(letters, LETTERS, 0:9), 20, TRUE), collapse = &quot;&quot;), &quot;.RStash&quot;)
+        file_path &lt;- file.path(dir_path, file_name)
+        saveRDS(object, file_path)
+        f &lt;- function(){
+                if (!file.exists(file_path)){
+                        stop(&quot;stash file missing.&quot;)
+                } else {
+                        readRDS(file_path)
+                }
+        }
+
+        structure(f,
+                  class = c(&quot;stash_pointer&quot;, class(f)),
+                  file_path = file_path,
+                  obj_size = format(object.size(object), unit = &quot;MB&quot;, digits = 2),
+                  obj_class = class(object)
+                  )
+}</code></pre>
+<p>So calling <code>stash()</code> saves a binary of the object onto the disk, and returns a function that is going to read from this the file when called, with relevant metadata. I just call the cache on the disk “stash” and this function a “stash pointer”.</p>
+<p>Let’s test it out.</p>
+<pre class="r"><code>mtcars2 &lt;- stash(mtcars)
+mtcars2() </code></pre>
+<pre><code>##                      mpg cyl  disp  hp drat    wt  qsec vs am gear carb
+## Mazda RX4           21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4
+## Mazda RX4 Wag       21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4
+## Datsun 710          22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1
+## Hornet 4 Drive      21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1
+## Hornet Sportabout   18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2
+## Valiant             18.1   6 225.0 105 2.76 3.460 20.22  1  0    3    1
+## Duster 360          14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4
+## Merc 240D           24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2
+## Merc 230            22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2
+## Merc 280            19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4
+## Merc 280C           17.8   6 167.6 123 3.92 3.440 18.90  1  0    4    4
+## Merc 450SE          16.4   8 275.8 180 3.07 4.070 17.40  0  0    3    3
+## Merc 450SL          17.3   8 275.8 180 3.07 3.730 17.60  0  0    3    3
+## Merc 450SLC         15.2   8 275.8 180 3.07 3.780 18.00  0  0    3    3
+## Cadillac Fleetwood  10.4   8 472.0 205 2.93 5.250 17.98  0  0    3    4
+## Lincoln Continental 10.4   8 460.0 215 3.00 5.424 17.82  0  0    3    4
+## Chrysler Imperial   14.7   8 440.0 230 3.23 5.345 17.42  0  0    3    4
+## Fiat 128            32.4   4  78.7  66 4.08 2.200 19.47  1  1    4    1
+## Honda Civic         30.4   4  75.7  52 4.93 1.615 18.52  1  1    4    2
+## Toyota Corolla      33.9   4  71.1  65 4.22 1.835 19.90  1  1    4    1
+## Toyota Corona       21.5   4 120.1  97 3.70 2.465 20.01  1  0    3    1
+## Dodge Challenger    15.5   8 318.0 150 2.76 3.520 16.87  0  0    3    2
+## AMC Javelin         15.2   8 304.0 150 3.15 3.435 17.30  0  0    3    2
+## Camaro Z28          13.3   8 350.0 245 3.73 3.840 15.41  0  0    3    4
+## Pontiac Firebird    19.2   8 400.0 175 3.08 3.845 17.05  0  0    3    2
+## Fiat X1-9           27.3   4  79.0  66 4.08 1.935 18.90  1  1    4    1
+## Porsche 914-2       26.0   4 120.3  91 4.43 2.140 16.70  0  1    5    2
+## Lotus Europa        30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2
+## Ford Pantera L      15.8   8 351.0 264 4.22 3.170 14.50  0  1    5    4
+## Ferrari Dino        19.7   6 145.0 175 3.62 2.770 15.50  0  1    5    6
+## Maserati Bora       15.0   8 301.0 335 3.54 3.570 14.60  0  1    5    8
+## Volvo 142E          21.4   4 121.0 109 4.11 2.780 18.60  1  1    4    2</code></pre>
+<p>Perfect!</p>
+<p>Let’s add some housekeeping funcitions, too.</p>
+<pre class="r"><code>print.stash_pointer &lt;- function(x){
+        cat(paste0(&quot;&lt;stash_pointer&gt;&quot;, &quot; `&quot;, attr(x, &quot;obj_class&quot;)[1],&quot;` &quot;, attr(x, &quot;obj_size&quot;), &quot;\n&quot;))
+        cat(&quot;- &quot;, paste(attr(x, &quot;file_path&quot;)))
+}
+
+# delete the cache on disk
+clear_stash &lt;- function(stash_pointer){
+        file_path &lt;- attr(stash_pointer, &quot;file_path&quot;)
+        if (file.exists(file_path)){
+                file.remove(file_path)      
+        } 
+}
+
+stash_exists &lt;- function(stash_pointer){
+        file.exists(attr(stash_pointer, &quot;file_path&quot;))
+}
+
+is_stash_pointer &lt;- function(x){
+        inherits(x, &quot;stash_pointer&quot;)
+}</code></pre>
+<pre class="r"><code>mtcars2</code></pre>
+<pre><code>## &lt;stash_pointer&gt; `data.frame` 0.01 Mb
+## -  C:\Users\Siqi\AppData\Local\Temp\RtmpAD5jhM/h8H1UhRSk1GAM8cU9Mw1.RStash</code></pre>
+<pre class="r"><code>is_stash_pointer(mtcars2)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<pre class="r"><code>clear_stash(mtcars2)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<pre class="r"><code>stash_exists(mtcars2)</code></pre>
+<pre><code>## [1] FALSE</code></pre>
+<pre class="r"><code>df_list &lt;- list(mtcars, iris, chickwts, PlantGrowth, USArrests)</code></pre>
+<p>Let’s utilize <code>purrr</code>’s functional programming interface and <code>stash()</code> everything in <code>df_list</code>:</p>
+<pre class="r"><code>require(purrr)</code></pre>
+<pre><code>## Loading required package: purrr</code></pre>
+<pre class="r"><code>stash_pointer_list &lt;- map(df_list, stash)</code></pre>
+<p>The result is a list of <code>stash_pointer</code>s:</p>
+<pre class="r"><code>stash_pointer_list</code></pre>
+<pre><code>## [[1]]
+## &lt;stash_pointer&gt; `data.frame` 0.01 Mb
+## -  C:\Users\Siqi\AppData\Local\Temp\RtmpAD5jhM/th1lnAnJ8tLBJpKW6zbN.RStash
+## [[2]]
+## &lt;stash_pointer&gt; `data.frame` 0.01 Mb
+## -  C:\Users\Siqi\AppData\Local\Temp\RtmpAD5jhM/kjHlGgv8yrwEqfZySM09.RStash
+## [[3]]
+## &lt;stash_pointer&gt; `data.frame` 0 Mb
+## -  C:\Users\Siqi\AppData\Local\Temp\RtmpAD5jhM/E1TGMdrWlnwoHkgz64Uq.RStash
+## [[4]]
+## &lt;stash_pointer&gt; `data.frame` 0 Mb
+## -  C:\Users\Siqi\AppData\Local\Temp\RtmpAD5jhM/VAMfOCJUJ3BrooIrVos2.RStash
+## [[5]]
+## &lt;stash_pointer&gt; `data.frame` 0.01 Mb
+## -  C:\Users\Siqi\AppData\Local\Temp\RtmpAD5jhM/Pw8XgcfKoqtaYDs1DIza.RStash</code></pre>
+<p>See the column name of every data frame:</p>
+<pre class="r"><code>map(stash_pointer_list, ~ exec(.) %&gt;% colnames())</code></pre>
+<pre><code>## [[1]]
+##  [1] &quot;mpg&quot;  &quot;cyl&quot;  &quot;disp&quot; &quot;hp&quot;   &quot;drat&quot; &quot;wt&quot;   &quot;qsec&quot; &quot;vs&quot;   &quot;am&quot;   &quot;gear&quot;
+## [11] &quot;carb&quot;
+## 
+## [[2]]
+## [1] &quot;Sepal.Length&quot; &quot;Sepal.Width&quot;  &quot;Petal.Length&quot; &quot;Petal.Width&quot; 
+## [5] &quot;Species&quot;     
+## 
+## [[3]]
+## [1] &quot;weight&quot; &quot;feed&quot;  
+## 
+## [[4]]
+## [1] &quot;weight&quot; &quot;group&quot; 
+## 
+## [[5]]
+## [1] &quot;Murder&quot;   &quot;Assault&quot;  &quot;UrbanPop&quot; &quot;Rape&quot;</code></pre>
+<p>Cheers!</p>

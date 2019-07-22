@@ -98,7 +98,7 @@ Account Service Intern / Shanghai, China / Feb - July 2012
 ### Software ###
 
 #### As Author ####
-- psyphr (unpublished): tidy, organize and visualize pshyisological measurements, such as heart rate variability, skin conductance, etc.
+- psyphr (unpublished): tidy, organize and visualize phyisological measurements, such as heart rate variability, skin conductance, etc.
 - [modular](https://github.com/iqis/modular): a lightweight module system for R
 
 
@@ -139,7 +139,7 @@ Account Service Intern / Shanghai, China / Feb - July 2012
 
 #### Computer Skills
 
-##### Experienced
+##### = Experienced = 
 I'm very versed at these through daily work, and can claim expertise on some.
 
 - R (w. Tidyverse)
@@ -147,21 +147,22 @@ I'm very versed at these through daily work, and can claim expertise on some.
 - SQL (many flavors), MySQL, MS SQL Server
 - Git
 
-##### Developing
+##### = Developing = 
 I learn and know the basics of these, with which I sometimes solve real problems.
 
 - Python
 - Docker
 - Tableau
 
-##### Experimental
+##### = Experimental = 
 I have fun with these, but haven't adopted much for work.
 
 - React.js, Node.js
 - Julia, Clojure, Racket, Haskell
 
-##### Retired
-Given better alternatives, I do not frequently invoked or actively develop on these. I'll summon these only as necessary.
+##### = Retired =
+Given better alternatives, I do not frequently use or actively develop on these. 
+I summon these only as necessary.
 
 - SAS
 - C, Awk
