@@ -171,6 +171,6 @@ I summon these only as necessary.
 
 <hr/>
 ### R Consulting
-Consulting assignments on R programming and development issues are welcome. I provide this service at a reasonable rate, remotely or on-site. Currently, I do not re-write R codes into any other language, or vice versa. Please inquire for availability and work samples. 
+Consulting on R-related issues are welcome. I provide this service at a reasonable rate, remotely or on-site. Currently, I do not re-write R codes into any other language, or vice versa. Please inquire for availability and work samples. 
 <hr/>
 _a live copy of [this document](http://iqis.netlify.com/vitae)_
