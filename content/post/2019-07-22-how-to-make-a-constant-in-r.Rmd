@@ -1,0 +1,101 @@
+---
+title: How to make a constant in R with active binding
+author: Siqi Zhang
+date: '2019-07-22'
+slug: how-to-make-a-constant-in-r
+categories:
+  - R
+tags:
+  - Programming
+---
+
+```
+"You can kill me, but you can't alter my value."
+                        -- R. Constant
+```
+
+A constant is an object which value cannot be altered once assigned. There are some sound arguments for a constant; but by and large, just like strong typing or inheritance, a constant is not a very meaningful feature in data science programming. 
+
+Nonetheless, it would be quite interesting to see if it was possible to implement such feature in our language, R. The following implementation will take advantage of `makeActiveBinding()` from the base package. Indeed, base R is full of treasures. Let's have a little fun.
+
+
+### Active binding; how it works
+
+What's behind an "active binding" is essentially a function supplied by the user. The function gets invoked with very special rules: when the name is evaluated alone, the function is called with no argument passed to it; when the name apprears on the _lhs_ of an assignment operator `<-`, the function is called with the _rhs_ as its only argument. 
+
+The following shall be a clear demonstration:
+
+```{r}
+# This is a regular binding, using the ` <- ` operator
+reg_binding <- function(x = "I'm a regular binding."){
+  print(x)
+}
+
+# `makeActiveBinding()` works like `assign()`
+makeActiveBinding("act_binding", env = parent.frame(), fun = function(x = "I'm an active binding."){
+  print(x)
+})
+```
+_Note: the following code blocks that evaluates `act_binding` contain a bug from RMarkdown, therefore the outputs are not printed._
+
+`reg_binding()` is called with no argument.
+```{r}
+reg_binding()
+```
+
+
+`act_binding` also calls the underlying function with no argument. 
+```{r eval = FALSE}
+act_binding
+# "I'm an active binding."
+```
+   
+
+Now `reg_binding()` function is being passed an argument, overriding the default.
+```{r}
+reg_binding("This is a nice day.")
+```
+
+
+The `rhs` string overrides the default argument of the underlying function.
+```{r}
+act_binding <- "This is a nice day, too."
+# "This is a nice day, too."
+```
+
+
+### Making a constant with active binding
+
+In order to make a constant, the object must resist being assigned a new value through defying the assignment operator.  This is where active binding's special behavior with `<-` is useful. We can make it do nothing but mocking the user on his void attempt. The implementation goes as follows:
+
+
+```{r}
+const <- function(name, value){
+  makeActiveBinding(substitute(name), env = parent.frame(), fun = function(.){
+    if (missing(.)){
+      return(value)
+    } else {
+      warning("You can kill me, but you can't alter my value.")
+      return(NULL)
+    }
+  })
+}
+```
+
+With the `const()` function, we can make a constant called `foo`. 
+```{r}
+const(foo, "I'm R. Constant.")
+foo
+```
+
+```{r}
+foo <- "You must surrender!"
+```
+
+OK. Now let's kill it. 
+```{r}
+rm(foo)
+```
+
+Bye-bye! 
+    
