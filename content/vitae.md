@@ -2,10 +2,10 @@
 title: "Curriculum Vitae"
 geometry: margin=1in
 output:
+  word_document: default
+  pdf_document: default
   html_document:
     df_print: paged
-  pdf_document: default
-  word_document: default
 sansfont: Chivo Light
 fontsize: 12pt
 ---
@@ -17,8 +17,15 @@ siqi.zhang.career@outlook.com
 <hr/>    
 ### Work
 
+#### Freelance R Developer
+(Remote) / Nov 2018 - Present
+
+- Custom R packages on systems integration, data manipulation and report generation
+- Shiny applications, some dashboards, for small scale deployment
+
+
 #### DataCamp
-Author / remote / Dec 2018 - Apr 2019
+Author / (Remote) / Dec 2018 - Apr 2019
 
 - Explore, study and profile statistics and machine learning technologies 
 - Develop interactive online learning course and practice contents on R and Python
@@ -29,11 +36,10 @@ Author / remote / Dec 2018 - Apr 2019
 #### Metaphor 
 Master Generalist in Analytics / Garden City, NY / Nov 2017 - Sep 2018  
 
-- Lead team on market research and digital strategies for multiple clients in consumer goods manufacturing industry
+- Lead team on market research and digital strategies for multiple clients in consumer goods industry
 - Develop an integrated web traffic, e-commerce & ad spending reporting platform with Google Analytics, Google Search Ad 360, eBay Sell, Amazon MWS REST APIs, using Shiny and httr on a Linux server
 - Plan and conduct A/B testing on client websites, sharing results for improving creative designs and optimizing search and display buying
-- Product lifecycle analysis with sales, return and specification data to support client's effort in product planning & design
-- Ad hoc data profiling, modeling and reporting on clients' request
+- Product lifecycle analysis with product sales, return and specification data to support client's effort in product planning & design
 
     
     
@@ -42,7 +48,7 @@ Senior Analyst, Performance Analytics / New York, NY / July - Oct 2017
 
 - Database schemas and data migration plans with MS SQL Server
 - Client-specific ETL pipelines, quality assurance routines and Tableau dashboards
-- Version control and encapsulation solution for data preprocessing and exploratory analysis
+- Data encapsulation and versioning solution for preprocessing and exploratory analysis
 
     
     
@@ -89,15 +95,26 @@ Account Service Intern / Shanghai, China / Feb - July 2012
 **Michigan State University** / BA Advertising / 2009 - 2014
 
 <hr/>
-### Specialty & Interest
-    
+### Software ###
+
+#### As Author ####
+- psyphr (unpublished): tidy, organize and visualize pshyisological measurements, such as heart rate variability, skin conductance, etc.
+- [modular](https://github.com/iqis/modular): a lightweight module system for R
+
+
+#### As Contributor ####
+- [rolldown](https://cran.r-project.org/web/packages/rolldown/): a RMarkdown extention for "scrollytelling" 
+
+
+<hr/>
+### Specialty, Interest and Skills
+
 #### Industry
 
 - Automotive
 - Quick-serve Restaurant
-- Financial
-- Manufacturing
-    
+- Financial Services, Insurance
+- Bio-medical
     
 #### Analysis Topics
 
@@ -120,23 +137,39 @@ Account Service Intern / Shanghai, China / Feb - July 2012
 - bayesian: MCMC, bandit
 - tree: CART, ranger
 
-#### R
+#### Computer Skills
 
-- presentation: shiny, shinydashboard, ggplot2, plotly, rmarkdown, knitr
-- modeling: cba, mlr, caret, rpart, Rstanarm, TensorFlow(w.Python)
-- infrastructure: odbc, httr,  plumber, fiery, feather
+##### Experienced
+I'm very versed at these through daily work, and can claim expertise on some.
 
-#### Other
+- R (w. Tidyverse)
+- HTML/CSS, JavaScript (w. jQuery)
+- SQL (many flavors), MySQL, MS SQL Server
+- Git
 
-- JavaScript, Excel/VBA, Python
-- Linux, Docker, MySQL, SQL Server, PostgreSQL
-- Git, Subversion
+##### Developing
+I learn and know the basics of these, with which I sometimes solve real problems.
+
+- Python
+- Docker
 - Tableau
 
+##### Experimental
+I have fun with these, but haven't adopted much for work.
 
+- React.js, Node.js
+- Julia, Clojure, Racket, Haskell
+
+##### Retired
+Given better alternatives, I do not frequently invoked or actively develop on these. I'll summon these only as necessary.
+
+- SAS
+- C, Awk
+- SPSS, MS Excel/VBA, MS Access
+- Subversion (SVN)
 
 <hr/>
 ### R Consulting
-Consulting assignments on R programming and development issues are welcome. I provide this service at a reasonable rate, via email or on-site. I do not re-write R codes into any other language, or vice versa. Please inquire for availability and work samples. 
+Consulting assignments on R programming and development issues are welcome. I provide this service at a reasonable rate, remotely or on-site. Currently, I do not re-write R codes into any other language, or vice versa. Please inquire for availability and work samples. 
 <hr/>
 _a live copy of [this document](http://iqis.netlify.com/vitae)_
