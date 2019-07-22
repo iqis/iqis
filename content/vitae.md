@@ -22,20 +22,21 @@ siqi.zhang.career@outlook.com
 
 - Custom R packages on systems integration, data manipulation and report generation
 - Shiny applications (some dashboards), for internal small scale deployment
-
-
+- Web API built with plumbr (experimental)
+    
+    
 #### DataCamp
 Author / (Remote) / Dec 2018 - Apr 2019
 
 - Study and profile analytical topics & technical solutions with R, Python
-- Online practice contents with Markdown
+- Online practice contents on the above
    
       
 #### Metaphor 
 Master Generalist in Analytics / Garden City, NY / Nov 2017 - Sep 2018  
 
 - Digital marketing and analytic strategies for clients in consumer goods industry
-- Development and maintenance of an internal integrated reporting platform on web traffic, e-commerce & ad spending, solely with R
+- Development and maintenance of an internal integrated reporting platform on web traffic, e-commerce & ad spending, solely with the R ecosystem on a Linux server
 - A/B tests on client websites, improving creative designs and ad buying
 - Lifecycle analysis with product sales, return and specification data to support product planning & design
 
@@ -88,13 +89,13 @@ Account Service Intern / Shanghai, China / Feb - July 2012
 
 **University of Maryland** / MS Marketing Analytics / 2016 - 2017
 
-**Michigan State University** / BA Advertising / 2009 - 2014
-
+**Michigan State University** / BA Advertising / 2009 - 2014    
+    
 <hr/>
 ### Software ###
 
 #### As Author ####
-- psyphr (unpublished): tidy, organize and visualize phyisological measurements, such as heart rate variability, skin conductance, etc.
+- psyphr (unpublished): tidy, organize and visualize phyisological measurements, e.g. heart rate variability, skin conductance, etc.
 - [modular](https://github.com/iqis/modular): a lightweight module system for R
 
 
@@ -130,33 +131,33 @@ Account Service Intern / Shanghai, China / Feb - July 2012
 
 #### Computer Skills
 
-##### = Experienced = 
-I'm very versed at these through daily work, and can claim expertise on some.
+__Experienced__        
+I'm very versed at these through daily work, and can claim expertise.
 
 - R (w. Tidyverse)
-- HTML/CSS, JavaScript (w. jQuery)
 - SQL (many flavors), MySQL, MS SQL Server
+
+__Developing__    
+I know beyond the basics, can solve real problems with these.
+
+- HTML/CSS, JavaScript (w. jQuery)
+- Python (w. TensorFlow)
 - Git
+- Tableau, MS Power BI
 
-##### = Developing = 
-I learn and know the basics of these, with which I sometimes solve real problems.
-
-- Python
-- Docker
-- Tableau
-
-##### = Experimental = 
-I have fun with these, but haven't adopted much for work.
+__Experimental__    
+I study and have fun with these, but have not used regularly for work.
 
 - React.js, Node.js
 - Julia, Clojure, Racket, Haskell
+- MongoDB
+- Docker
 
-##### = Retired =
-Given better alternatives, I do not frequently use or actively develop on these. 
-I summon these only as necessary.
+__Retired__   
+I rarely use these any more, and summon these only as strictly necessary.
 
 - SAS
-- C, Awk
+- C, Awk, Tcl
 - SPSS, MS Excel/VBA, MS Access
 - Subversion (SVN)
 
