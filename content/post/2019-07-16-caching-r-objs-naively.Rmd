@@ -10,7 +10,7 @@ tags: []
 
 Recently I ran accross a problem: The program I'm writing reads from hundreds of large data sets totaling in tens of gigabytes, and the memory on my or any potential user's machine simply won't fit. 
 
-Ideally, for caching objects on the disk, I would have wanted to use more sophisticated solusions such as Roger Peng's (`filehash`)[https://cran.r-project.org/web/packages/filehash/index.html]. Instead, I just wanted to simply dump everything onto the disk, and read & process each as needed, with the following solution: 
+Ideally, for caching objects on the disk, I would have wanted to use more sophisticated solusions such as Roger Peng's [filehash](https://cran.r-project.org/web/packages/filehash/index.html). Instead, I just wanted to simply dump everything onto the disk, and read & process each as needed, with the following solution: 
 
 - Write each data set as a binary file to the disk
 - Make a function that reads from its own binary file when called

@@ -11,7 +11,7 @@ tags: []
 
 
 <p>Recently I ran accross a problem: The program I’m writing reads from hundreds of large data sets totaling in tens of gigabytes, and the memory on my or any potential user’s machine simply won’t fit.</p>
-<p>Ideally, for caching objects on the disk, I would have wanted to use more sophisticated solusions such as Roger Peng’s (<code>filehash</code>)[<a href="https://cran.r-project.org/web/packages/filehash/index.html" class="uri">https://cran.r-project.org/web/packages/filehash/index.html</a>]. Instead, I just wanted to simply dump everything onto the disk, and read &amp; process each as needed, with the following solution:</p>
+<p>Ideally, for caching objects on the disk, I would have wanted to use more sophisticated solusions such as Roger Peng’s <a href="https://cran.r-project.org/web/packages/filehash/index.html">filehash</a>. Instead, I just wanted to simply dump everything onto the disk, and read &amp; process each as needed, with the following solution:</p>
 <ul>
 <li>Write each data set as a binary file to the disk</li>
 <li>Make a function that reads from its own binary file when called</li>
@@ -98,7 +98,7 @@ is_stash_pointer &lt;- function(x){
 }</code></pre>
 <pre class="r"><code>mtcars2</code></pre>
 <pre><code>## &lt;stash_pointer&gt; `data.frame` 0.01 Mb
-## -  C:\Users\Siqi\AppData\Local\Temp\RtmpCqfc25/G3FmGjZbldTFarLIz8ze.RStash</code></pre>
+## -  C:\Users\Siqi\AppData\Local\Temp\Rtmp2ZzZn6/Z7kHWfLJMdM1wGSbg3VS.RStash</code></pre>
 <pre class="r"><code>is_stash_pointer(mtcars2)</code></pre>
 <pre><code>## [1] TRUE</code></pre>
 <pre class="r"><code>clear_stash(mtcars2)</code></pre>
@@ -114,19 +114,19 @@ is_stash_pointer &lt;- function(x){
 <pre class="r"><code>stash_pointer_list</code></pre>
 <pre><code>## [[1]]
 ## &lt;stash_pointer&gt; `data.frame` 0.01 Mb
-## -  C:\Users\Siqi\AppData\Local\Temp\RtmpCqfc25/6FMBXop1KbY4ICT7aAAY.RStash
+## -  C:\Users\Siqi\AppData\Local\Temp\Rtmp2ZzZn6/xT48GLb1jIOW9RRAajMI.RStash
 ## [[2]]
 ## &lt;stash_pointer&gt; `data.frame` 0.01 Mb
-## -  C:\Users\Siqi\AppData\Local\Temp\RtmpCqfc25/WTeILJclrP2Ax8MBQXVO.RStash
+## -  C:\Users\Siqi\AppData\Local\Temp\Rtmp2ZzZn6/0gJh0Pbafp4RraEO4AD2.RStash
 ## [[3]]
 ## &lt;stash_pointer&gt; `data.frame` 0 Mb
-## -  C:\Users\Siqi\AppData\Local\Temp\RtmpCqfc25/wFB1bVtNl3lYnGg9TSf9.RStash
+## -  C:\Users\Siqi\AppData\Local\Temp\Rtmp2ZzZn6/kwrzDTIA1kJJRztt1Kzd.RStash
 ## [[4]]
 ## &lt;stash_pointer&gt; `data.frame` 0 Mb
-## -  C:\Users\Siqi\AppData\Local\Temp\RtmpCqfc25/QA4iqZR8Js4GsXQ7vkys.RStash
+## -  C:\Users\Siqi\AppData\Local\Temp\Rtmp2ZzZn6/abW1OydTcEXz690dL0w6.RStash
 ## [[5]]
 ## &lt;stash_pointer&gt; `data.frame` 0.01 Mb
-## -  C:\Users\Siqi\AppData\Local\Temp\RtmpCqfc25/RaUMCaSe3lx7QNs1m405.RStash</code></pre>
+## -  C:\Users\Siqi\AppData\Local\Temp\Rtmp2ZzZn6/f9NLaawIpZ4lGqA6xaHj.RStash</code></pre>
 <p>See the column name of every data frame:</p>
 <pre class="r"><code>map(stash_pointer_list, ~ exec(.) %&gt;% colnames())</code></pre>
 <pre><code>## [[1]]
