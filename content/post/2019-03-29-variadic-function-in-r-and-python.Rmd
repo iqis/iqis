@@ -1,5 +1,5 @@
 ---
-title: "Variadic function in R and Python"
+title: "Variadic Functions in R and Python"
 author: "Siqi Zhang"
 date: '2019-03-29'
 slug: variadic-function-in-r-and-python
