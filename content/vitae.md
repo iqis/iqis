@@ -21,25 +21,23 @@ siqi.zhang.career@outlook.com
 (Remote) / Nov 2018 - Present
 
 - Custom R packages on systems integration, data manipulation and report generation
-- Shiny applications, some dashboards, for small scale deployment
+- Shiny applications (some dashboards), for internal small scale deployment
 
 
 #### DataCamp
 Author / (Remote) / Dec 2018 - Apr 2019
 
-- Explore, study and profile statistics and machine learning technologies 
-- Develop interactive online learning course and practice contents on R and Python
-- Provide critical opinion in improving internal course editor
-
+- Study and profile analytical topics & technical solutions with R, Python
+- Online practice contents with Markdown
    
       
 #### Metaphor 
 Master Generalist in Analytics / Garden City, NY / Nov 2017 - Sep 2018  
 
-- Lead team on market research and digital strategies for multiple clients in consumer goods industry
-- Develop an integrated web traffic, e-commerce & ad spending reporting platform with Google Analytics, Google Search Ad 360, eBay Sell, Amazon MWS REST APIs, using Shiny and httr on a Linux server
-- Plan and conduct A/B testing on client websites, sharing results for improving creative designs and optimizing search and display buying
-- Product lifecycle analysis with product sales, return and specification data to support client's effort in product planning & design
+- Digital marketing and analytic strategies for clients in consumer goods industry
+- Development and maintenance of an internal integrated reporting platform on web traffic, e-commerce & ad spending, solely with R
+- A/B tests on client websites, improving creative designs and ad buying
+- Lifecycle analysis with product sales, return and specification data to support product planning & design
 
     
     
@@ -47,9 +45,9 @@ Master Generalist in Analytics / Garden City, NY / Nov 2017 - Sep 2018
 Senior Analyst, Performance Analytics / New York, NY / July - Oct 2017
 
 - Database schemas and data migration plans with MS SQL Server
-- Client-specific ETL pipelines, quality assurance routines and Tableau dashboards
-- Data encapsulation and versioning solution for preprocessing and exploratory analysis
-
+- Client-specific ETL pipelines & automation, quality assurance routines and dashboards on Tableau Server
+- Data encapsulation and versioning solution for preprocessing and exploratory analysis, with R6
+- Update and operationalize marketing mix model built with MCMC 
     
     
 #### R.H. Smith School of Business, University of Maryland
@@ -57,13 +55,12 @@ Graduate Assistant / College Park, MD / Sep 2016 - Apr 2017
 
 - Proctor and grade undergraduate exams
 - Tutor undergraduate student on statistics and R programming
-- Departmental administrative tasks
     
     
-#### CR Snow  
+#### CR Snow Brewery
 CRM Analyst / Shanghai, China / Jan - Dec 2015
 
-- Querying, cleaning, and modeling with sales and survey data for customer retention, segmentation, and lifetime value
+- Query, clean, and model with sales data for customer retention, segmentation, and lifetime value
 - Serve as a data-driven advisor on DM, SMS, loyalty program, and other customer outreach initiatives
 - Build and deliver competitive profile and benchmark in industry analysis
 
@@ -73,20 +70,19 @@ CRM Analyst / Shanghai, China / Jan - Dec 2015
 Marketing Research Associate / Beijing, China / Aug - Dec 2014
 
 - Gather, compile and analyze automotive market trends from public and proprietary sources
-- Sales and marketing reports with tables, charts, infographics and other deliverables, interactive dashboards with Excel and VBA
+- Build marketing reports, and interactive dashboards with Excel and VBA
 - Conjoint analysis with consumer survey data
-
 
     
     
 #### RAPP, Omnicom Group   
 Account Service Intern / Shanghai, China / Feb - July 2012
 
-- Manage project calendar and timesheet; traffic between coworkers and vendors
-- Brainstorming sessions and brief creative production for direct mails
-- Periodical internal report on domestic luxury automotive market
-
-
+- Manage project calendar and timesheet; conduct creative production briefing
+- Internal report on domestic luxury automotive market
+- Preprocessing CRM data
+    
+    
 <hr/>
 ### Education ###
 
@@ -109,12 +105,6 @@ Account Service Intern / Shanghai, China / Feb - July 2012
 <hr/>
 ### Specialty, Interest and Skills
 
-#### Industry
-
-- Automotive
-- Quick-serve Restaurant
-- Financial Services, Insurance
-- Bio-medical
     
 #### Analysis Topics
 
@@ -136,6 +126,7 @@ Account Service Intern / Shanghai, China / Feb - July 2012
 - clustering: k-means, POPC
 - bayesian: MCMC, bandit
 - tree: CART, ranger
+- ...
 
 #### Computer Skills
 
