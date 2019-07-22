@@ -17,8 +17,7 @@ tags: []
 <li>Make a function that reads from its own binary file when called</li>
 </ul>
 <p>It goes as follows:</p>
-<pre class="r"><code>stash &lt;- function(object, 
-                  dir_path = tempdir()){
+<pre class="r"><code>stash &lt;- function(object, dir_path = tempdir()){
         file_name &lt;- paste0(paste0(sample(c(letters, LETTERS, 0:9), 20, TRUE), collapse = &quot;&quot;), &quot;.RStash&quot;)
         file_path &lt;- file.path(dir_path, file_name)
         saveRDS(object, file_path)
@@ -98,7 +97,7 @@ is_stash_pointer &lt;- function(x){
 }</code></pre>
 <pre class="r"><code>mtcars2</code></pre>
 <pre><code>## &lt;stash_pointer&gt; `data.frame` 0.01 Mb
-## -  C:\Users\Siqi\AppData\Local\Temp\Rtmp2ZzZn6/Z7kHWfLJMdM1wGSbg3VS.RStash</code></pre>
+## -  C:\Users\Siqi\AppData\Local\Temp\RtmpCocmg7/OPU77eRGosS6enXAUjqT.RStash</code></pre>
 <pre class="r"><code>is_stash_pointer(mtcars2)</code></pre>
 <pre><code>## [1] TRUE</code></pre>
 <pre class="r"><code>clear_stash(mtcars2)</code></pre>
@@ -114,19 +113,19 @@ is_stash_pointer &lt;- function(x){
 <pre class="r"><code>stash_pointer_list</code></pre>
 <pre><code>## [[1]]
 ## &lt;stash_pointer&gt; `data.frame` 0.01 Mb
-## -  C:\Users\Siqi\AppData\Local\Temp\Rtmp2ZzZn6/xT48GLb1jIOW9RRAajMI.RStash
+## -  C:\Users\Siqi\AppData\Local\Temp\RtmpCocmg7/1776RKVcCpsk2mSUcYlh.RStash
 ## [[2]]
 ## &lt;stash_pointer&gt; `data.frame` 0.01 Mb
-## -  C:\Users\Siqi\AppData\Local\Temp\Rtmp2ZzZn6/0gJh0Pbafp4RraEO4AD2.RStash
+## -  C:\Users\Siqi\AppData\Local\Temp\RtmpCocmg7/sMzxfYWLm5T6f0hxrzfr.RStash
 ## [[3]]
 ## &lt;stash_pointer&gt; `data.frame` 0 Mb
-## -  C:\Users\Siqi\AppData\Local\Temp\Rtmp2ZzZn6/kwrzDTIA1kJJRztt1Kzd.RStash
+## -  C:\Users\Siqi\AppData\Local\Temp\RtmpCocmg7/kKGmOspJretjwI0YgNmL.RStash
 ## [[4]]
 ## &lt;stash_pointer&gt; `data.frame` 0 Mb
-## -  C:\Users\Siqi\AppData\Local\Temp\Rtmp2ZzZn6/abW1OydTcEXz690dL0w6.RStash
+## -  C:\Users\Siqi\AppData\Local\Temp\RtmpCocmg7/Z3HlSpwfZGfiVtE7q1Dg.RStash
 ## [[5]]
 ## &lt;stash_pointer&gt; `data.frame` 0.01 Mb
-## -  C:\Users\Siqi\AppData\Local\Temp\Rtmp2ZzZn6/f9NLaawIpZ4lGqA6xaHj.RStash</code></pre>
+## -  C:\Users\Siqi\AppData\Local\Temp\RtmpCocmg7/kkEk0pBWP1b8KweKGZsA.RStash</code></pre>
 <p>See the column name of every data frame:</p>
 <pre class="r"><code>map(stash_pointer_list, ~ exec(.) %&gt;% colnames())</code></pre>
 <pre><code>## [[1]]
