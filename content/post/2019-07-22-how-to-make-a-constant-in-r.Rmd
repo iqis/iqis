@@ -32,7 +32,9 @@ reg_binding <- function(x = "I'm a regular binding."){
 }
 
 # `makeActiveBinding()` works like `assign()`
-makeActiveBinding("act_binding", env = parent.frame(), fun = function(x = "I'm an active binding."){
+makeActiveBinding("act_binding", 
+                  env = parent.frame(), 
+                  fun = function(x = "I'm an active binding."){
   print(x)
 })
 ```
@@ -101,5 +103,6 @@ Bye-bye!
     
 #### See also
 more on active binding:
+
 - [R and active binding (and pizza) ](https://colinfay.me/ractivebinfing/) - Colin Fay
 - [makeActiveBinding(): The Most Magical Hidden Gem in Base R](https://yihui.name/en/2018/08/make-active-binding/) - Yihui Xie
