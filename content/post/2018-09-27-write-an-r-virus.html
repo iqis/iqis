@@ -1,5 +1,5 @@
 ---
-title: 'How to Write an R Virus '
+title: 'Write an R Virus '
 author: Siqi Zhang
 date: '2018-09-27'
 slug: how-to-write-an-r-virus
@@ -86,9 +86,9 @@ Wow, your R is Rancid!!!</code></pre>
 <p>Now when we build a model; the coefficients looks normal, but are completely off. You can compare the this with the result on your own computer.</p>
 <pre class="r"><code>lm(mpg ~ ., data = mtcars)$coefficients</code></pre>
 <pre><code>## (Intercept)         cyl        disp          hp        drat          wt 
-## 15.96151239 -0.14457486  0.01730018 -0.02786936  1.02114114 -4.81996800 
+## 27.29774831 -0.24725527  0.02958717 -0.04766282  1.74637924 -8.24322094 
 ##        qsec          vs          am        gear        carb 
-##  1.06515919  0.41224261  3.26956103  0.85028569 -0.25871219</code></pre>
+##  1.82165993  0.70502687  5.59167903  1.45417829 -0.44245559</code></pre>
 <p>In the above, we saved a copy of the original function in the base package, concealing it with prepending the name wit a <code>.</code>. If we didn’t do that, we would have create an infinite recursion through self-refernce, such as:</p>
 <pre class="r"><code>reassign(&quot;paste&quot;,
          function(...) paste(...),

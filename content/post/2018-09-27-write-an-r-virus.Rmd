@@ -1,5 +1,5 @@
 ---
-title: 'How to Write an R Virus '
+title: 'Write an R Virus '
 author: Siqi Zhang
 date: '2018-09-27'
 slug: how-to-write-an-r-virus
