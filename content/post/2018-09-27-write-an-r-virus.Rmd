@@ -68,7 +68,7 @@ rnorm(1e9)
 ```
 For me, 1e9 is quite enough. But scientific notaion is your friend. Go big.
 
-However, if R is rendered completely unusable, the virus isn't goint to travel very far. That's not what we want. It is also a great idea to replace some good functions with naughty ones. Symbol bindings are locked in attached namespaces, but it is easy to undo that:
+However, if R is rendered completely unusable, the virus isn't going to travel very far. That's not what we want. It is also a great idea to replace some good functions with naughty ones. Symbol bindings are locked in attached namespaces, but it is easy to undo that:
 ```{r}
 reassign <- function(sym, value, envir) {
         envir <- as.environment(envir)
