@@ -1,5 +1,5 @@
 ---
-title: Handling Large Data in R, the Naive Way
+title: Handling Large Data in R, a Naive Way
 author: Siqi Zhang
 date: '2019-07-16'
 slug: naive-caching-r-objects-onto-disk
@@ -97,7 +97,7 @@ is_stash_pointer &lt;- function(x){
 }</code></pre>
 <pre class="r"><code>mtcars2</code></pre>
 <pre><code>## &lt;stash_pointer&gt; `data.frame` 0.01 Mb
-## -  C:\Users\Siqi\AppData\Local\Temp\RtmpgXDarp/aLnv1d9xktrvDhsLdhJd.RStash</code></pre>
+## -  C:\Users\Siqi\AppData\Local\Temp\RtmpIBdzgB/fzrVVhK8eyBUu5TYSwdy.RStash</code></pre>
 <pre class="r"><code>is_stash_pointer(mtcars2)</code></pre>
 <pre><code>## [1] TRUE</code></pre>
 <pre class="r"><code>clear_stash(mtcars2)</code></pre>
@@ -113,19 +113,19 @@ is_stash_pointer &lt;- function(x){
 <pre class="r"><code>stash_pointer_list</code></pre>
 <pre><code>## [[1]]
 ## &lt;stash_pointer&gt; `data.frame` 0.01 Mb
-## -  C:\Users\Siqi\AppData\Local\Temp\RtmpgXDarp/YLKe4v790tjYgW8Ii60e.RStash
+## -  C:\Users\Siqi\AppData\Local\Temp\RtmpIBdzgB/7rAKTgSFGWovcQUmW0Im.RStash
 ## [[2]]
 ## &lt;stash_pointer&gt; `data.frame` 0.01 Mb
-## -  C:\Users\Siqi\AppData\Local\Temp\RtmpgXDarp/zkNDRapIUy1l7PxcFLkz.RStash
+## -  C:\Users\Siqi\AppData\Local\Temp\RtmpIBdzgB/ube6Dl5D1JfTtIxnNe8z.RStash
 ## [[3]]
 ## &lt;stash_pointer&gt; `data.frame` 0 Mb
-## -  C:\Users\Siqi\AppData\Local\Temp\RtmpgXDarp/O4ODbc5urzj2J7luyqGk.RStash
+## -  C:\Users\Siqi\AppData\Local\Temp\RtmpIBdzgB/akqpwGCEb4oRoxDvgXlZ.RStash
 ## [[4]]
 ## &lt;stash_pointer&gt; `data.frame` 0 Mb
-## -  C:\Users\Siqi\AppData\Local\Temp\RtmpgXDarp/CWuiNEMRgxVY85BJYT8Q.RStash
+## -  C:\Users\Siqi\AppData\Local\Temp\RtmpIBdzgB/rt9dIPtOpSEdqppancio.RStash
 ## [[5]]
 ## &lt;stash_pointer&gt; `data.frame` 0.01 Mb
-## -  C:\Users\Siqi\AppData\Local\Temp\RtmpgXDarp/H9XhtS2GxJzs4BuwuGt3.RStash</code></pre>
+## -  C:\Users\Siqi\AppData\Local\Temp\RtmpIBdzgB/6sKajSjX5YNIOZ2nfMyg.RStash</code></pre>
 <p>See the column name of every data frame:</p>
 <pre class="r"><code>map(stash_pointer_list, ~ exec(.) %&gt;% colnames())</code></pre>
 <pre><code>## [[1]]

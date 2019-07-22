@@ -1,5 +1,5 @@
 ---
-title: Handling Large Data in R, the Naive Way
+title: Handling Large Data in R, a Naive Way
 author: Siqi Zhang
 date: '2019-07-16'
 slug: naive-caching-r-objects-onto-disk
