@@ -45,7 +45,7 @@ Master Generalist in Analytics / Garden City, NY / Nov 2017 - Sep 2018
 #### Universal McCann, IPG Mediabrands 	
 Senior Analyst, Performance Analytics / New York, NY / July - Oct 2017
 
-- Database schemas and data migration plans with MS SQL Server
+- Database schema and data migration plans with MS SQL Server
 - Client-specific ETL pipelines & automation, quality assurance routines and dashboards on Tableau Server
 - Data encapsulation and versioning solution for preprocessing and exploratory analysis, with R6
 - Update and operationalize marketing mix model built with MCMC 
