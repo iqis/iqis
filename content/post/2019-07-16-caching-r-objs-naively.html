@@ -97,7 +97,7 @@ is_stash_pointer &lt;- function(x){
 }</code></pre>
 <pre class="r"><code>mtcars2</code></pre>
 <pre><code>## &lt;stash_pointer&gt; `data.frame` 0.01 Mb
-## -  C:\Users\Siqi\AppData\Local\Temp\RtmpKmxyn1/eGSjgzGTRgJfNWoXhspX.RStash</code></pre>
+## -  C:\Users\Siqi\AppData\Local\Temp\RtmpQjJ8De/3lKnzvKQ19xl8mjjPds8.RStash</code></pre>
 <pre class="r"><code>is_stash_pointer(mtcars2)</code></pre>
 <pre><code>## [1] TRUE</code></pre>
 <pre class="r"><code>clear_stash(mtcars2)</code></pre>
@@ -113,19 +113,19 @@ is_stash_pointer &lt;- function(x){
 <pre class="r"><code>stash_pointer_list</code></pre>
 <pre><code>## [[1]]
 ## &lt;stash_pointer&gt; `data.frame` 0.01 Mb
-## -  C:\Users\Siqi\AppData\Local\Temp\RtmpKmxyn1/9T6HLeJFT12VUF2EJyAX.RStash
+## -  C:\Users\Siqi\AppData\Local\Temp\RtmpQjJ8De/RvMu6LaE3tNVffnaPTHV.RStash
 ## [[2]]
 ## &lt;stash_pointer&gt; `data.frame` 0.01 Mb
-## -  C:\Users\Siqi\AppData\Local\Temp\RtmpKmxyn1/XPtIqZWc1YQeqXFbQCT1.RStash
+## -  C:\Users\Siqi\AppData\Local\Temp\RtmpQjJ8De/LQ1L97FC2ycNlgIQJLs6.RStash
 ## [[3]]
 ## &lt;stash_pointer&gt; `data.frame` 0 Mb
-## -  C:\Users\Siqi\AppData\Local\Temp\RtmpKmxyn1/l8w1tKKjkgEKTGQMZRzF.RStash
+## -  C:\Users\Siqi\AppData\Local\Temp\RtmpQjJ8De/4b9ir73roJxxAU8wh1tq.RStash
 ## [[4]]
 ## &lt;stash_pointer&gt; `data.frame` 0 Mb
-## -  C:\Users\Siqi\AppData\Local\Temp\RtmpKmxyn1/X3MBAvYt2ekTdK55ouUu.RStash
+## -  C:\Users\Siqi\AppData\Local\Temp\RtmpQjJ8De/gkACeOt3vscTGtKzLUTZ.RStash
 ## [[5]]
 ## &lt;stash_pointer&gt; `data.frame` 0.01 Mb
-## -  C:\Users\Siqi\AppData\Local\Temp\RtmpKmxyn1/Uvx43GMn9nKIo5zxoIzF.RStash</code></pre>
+## -  C:\Users\Siqi\AppData\Local\Temp\RtmpQjJ8De/IUuHeuBoGHauT7lUf6mP.RStash</code></pre>
 <p>See the column name of every data frame:</p>
 <pre class="r"><code>map(stash_pointer_list, ~ exec(.) %&gt;% colnames())</code></pre>
 <pre><code>## [[1]]

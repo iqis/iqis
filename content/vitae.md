@@ -21,8 +21,8 @@ siqi.zhang.career@outlook.com
 (Remote) / Nov 2018 - Present
 
 - Custom R packages on systems integration, data manipulation and report generation
-- Shiny applications (some dashboards), for internal small scale deployment
-- Web API built with plumbr (experimental)
+- Shiny applications (some dashboards) for internal deployment
+- Web API built with plumbr, experimental
     
     
 #### DataCamp
@@ -36,7 +36,7 @@ Author / (Remote) / Dec 2018 - Apr 2019
 Master Generalist in Analytics / Garden City, NY / Nov 2017 - Sep 2018  
 
 - Digital marketing and analytic strategies for clients in consumer goods industry
-- Development and maintenance of an internal integrated reporting platform on web traffic, e-commerce & ad spending, solely with the R ecosystem on a Linux server
+- Development and maintenance of an internal integrated reporting platform on web traffic, e-commerce & ad spending, solely within the R ecosystem on a Linux server
 - A/B tests on client websites, improving creative designs and ad buying
 - Lifecycle analysis with product sales, return and specification data to support product planning & design
 
@@ -47,7 +47,7 @@ Senior Analyst, Performance Analytics / New York, NY / July - Oct 2017
 
 - Database schema and data migration plans with MS SQL Server
 - Client-specific ETL pipelines & automation, quality assurance routines and dashboards on Tableau Server
-- Data encapsulation and versioning solution for preprocessing and exploratory analysis, with R6
+- Data encapsulation and versioning solution for preprocessing and exploratory analysis
 - Update and operationalize marketing mix model built with MCMC 
     
     
@@ -72,7 +72,7 @@ Marketing Research Associate / Beijing, China / Aug - Dec 2014
 
 - Gather, compile and analyze automotive market trends from public and proprietary sources
 - Build marketing reports, and interactive dashboards with Excel and VBA
-- Conjoint analysis with consumer survey data
+- Conjoint analysis on consumer survey data
 
     
     
@@ -163,6 +163,6 @@ I rarely use these any more, and summon these only as strictly necessary.
 
 <hr/>
 ### R Consulting
-Consulting on R-related issues are welcome. I provide this service at a reasonable rate, remotely or on-site. Currently, I do not re-write R codes into any other language, or vice versa. Please inquire for availability and work samples. 
+Consulting projects on R-related issues are welcome; I provide this service at a reasonable rate, remotely or on-site. Please inquire for availability and work samples. 
 <hr/>
 _a live copy of [this document](http://iqis.netlify.com/vitae)_
