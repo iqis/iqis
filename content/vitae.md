@@ -21,22 +21,21 @@ siqi.zhang.career@outlook.com
 (Remote) / Nov 2018 - Present
 
 - Custom R packages on systems integration, data manipulation and report generation
-- Shiny applications (some dashboards) for internal deployment
-- Web API built with plumbr, experimental
+- Shiny applications (some dashboards) for internal deployment; Web API with plumbr
     
     
 #### DataCamp
 Author / (Remote) / Dec 2018 - Apr 2019
 
 - Study and profile analytical topics & technical solutions with R, Python
-- Online practice contents on the above
+- Practice contents for online learning from the above
    
       
 #### Metaphor 
 Master Generalist in Analytics / Garden City, NY / Nov 2017 - Sep 2018  
 
 - Digital marketing and analytic strategies for clients in consumer goods industry
-- Development and maintenance of an internal integrated reporting platform on web traffic, e-commerce & ad spending, solely within the R ecosystem on a Linux server
+- Development and maintenance of an internal integrated reporting platform on web traffic, e-commerce & ad spending, solely with R, on a Linux server
 - A/B tests on client websites, improving creative designs and ad buying
 - Lifecycle analysis with product sales, return and specification data to support product planning & design
 
@@ -63,7 +62,7 @@ CRM Analyst / Shanghai, China / Jan - Dec 2015
 
 - Query, clean, and model with sales data for customer retention, segmentation, and lifetime value
 - Serve as a data-driven advisor on DM, SMS, loyalty program, and other customer outreach initiatives
-- Build and deliver competitive profile and benchmark in industry analysis
+- Make and deliver competitive profile and benchmark in industry analysis
 
     
     
@@ -71,17 +70,14 @@ CRM Analyst / Shanghai, China / Jan - Dec 2015
 Marketing Research Associate / Beijing, China / Aug - Dec 2014
 
 - Gather, compile and analyze automotive market trends from public and proprietary sources
-- Build marketing reports, and interactive dashboards with Excel and VBA
-- Conjoint analysis on consumer survey data
-
+- Interactive dashboards with Excel and VBA; Conjoint analysis on consumer survey data
     
     
 #### RAPP, Omnicom Group   
 Account Service Intern / Shanghai, China / Feb - July 2012
 
 - Manage project calendar and timesheet; conduct creative production briefing
-- Internal report on domestic luxury automotive market
-- Preprocessing CRM data
+- Monitor and report on account performance
     
     
 <hr/>
