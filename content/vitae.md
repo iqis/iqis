@@ -13,8 +13,22 @@ fontsize: 12pt
 **Siqi Zhang**  
 siqi.zhang.career@outlook.com
 
+
+***
+### Education ###
+
+**University of Maryland** / MS Marketing Analytics / 2016 - 2017
+
+**Michigan State University** / BA Advertising / 2009 - 2014    
     
-<hr/>    
+***
+### Software ###
+
+- psyphr (in development): tidy, organize and visualize phyisological measurements, e.g. heart rate variability, skin conductance, etc.
+- [modular](https://github.com/iqis/modular): a lightweight module system for R
+- [rolldown](https://cran.r-project.org/web/packages/rolldown/): a RMarkdown extention for "scrollytelling" 
+    
+***    
 ### Work
 
 #### Freelance R Developer
@@ -27,15 +41,16 @@ siqi.zhang.career@outlook.com
 #### DataCamp
 Author / (Remote) / Dec 2018 - Apr 2019
 
-- Study and profile analytical topics & technical solutions with R, Python
-- Practice contents for online learning from the above
+- Study and profile analytical solutions with R and Python
+- Develop and test online learning practice contents for existing courses
+  - e.g. [Working with Dates and Times in R](https://www.datacamp.com/courses/working-with-dates-and-times-in-r)
    
       
 #### Metaphor 
 Master Generalist in Analytics / Garden City, NY / Nov 2017 - Sep 2018  
 
 - Digital marketing and analytic strategies for clients in consumer goods industry
-- Development and maintenance of an internal integrated reporting platform on web traffic, e-commerce & ad spending, solely with R, on a Linux server
+- Develop and maintain a data management utility, including API clients for digital marketing platforms using httr, with a Shiny reporting interface
 - A/B tests on client websites, improving creative designs and ad buying
 - Lifecycle analysis with product sales, return and specification data to support product planning & design
 
@@ -44,10 +59,11 @@ Master Generalist in Analytics / Garden City, NY / Nov 2017 - Sep 2018
 #### Universal McCann, IPG Mediabrands 	
 Senior Analyst, Performance Analytics / New York, NY / July - Oct 2017
 
-- Database schema and data migration plans with MS SQL Server
-- Client-specific ETL pipelines & automation, quality assurance routines and dashboards on Tableau Server
-- Data encapsulation and versioning solution for preprocessing and exploratory analysis
-- Update and operationalize marketing mix model built with MCMC 
+- Design database schema and data migration plans on MS SQL Server
+- Make a data encapsulation and versioning solution for transformation and exploratory analysis with R6
+- Build client-specific ETL pipelines & automation, quality assurance routines and dashboards
+- Train and update models with caret and Rstanarm
+- Develop a Shiny app to build scenario simulation with from model parameters
     
     
 #### R.H. Smith School of Business, University of Maryland
@@ -78,28 +94,10 @@ Account Service Intern / Shanghai, China / Feb - July 2012
 
 - Manage project calendar and timesheet; conduct creative production briefing
 - Monitor and report on account performance
+- Learned and used R for data exploration and preprocessing
     
-    
-<hr/>
-### Education ###
 
-**University of Maryland** / MS Marketing Analytics / 2016 - 2017
-
-**Michigan State University** / BA Advertising / 2009 - 2014    
-    
-<hr/>
-### Software ###
-
-#### As Author ####
-- psyphr (unpublished): tidy, organize and visualize phyisological measurements, e.g. heart rate variability, skin conductance, etc.
-- [modular](https://github.com/iqis/modular): a lightweight module system for R
-
-
-#### As Contributor ####
-- [rolldown](https://cran.r-project.org/web/packages/rolldown/): a RMarkdown extention for "scrollytelling" 
-
-
-<hr/>
+***
 ### Specialty, Interest and Skills
 
     
@@ -128,37 +126,36 @@ Account Service Intern / Shanghai, China / Feb - July 2012
 #### Computer Skills
 
 __Experienced__        
-I'm very versed at these through daily work, and can claim expertise.
+I claim expertise on the following.
 
-- R (w. Tidyverse)
+- R (with Tidyverse)
 - SQL (many flavors), MySQL, MS SQL Server
 
 __Developing__    
-I know beyond the basics, can solve real problems with these.
+I know the following beyond the basics, and can solve real problems.
 
-- HTML/CSS, JavaScript (w. jQuery)
-- Python (w. TensorFlow)
+- HTML/CSS, JavaScript (with jQuery)
+- Python
 - Git
 - Tableau, MS Power BI
 
 __Experimental__    
-I study and have fun with these, but have not used regularly for work.
+I study but have not used the following regularly for work.
 
 - React.js, Node.js
 - Julia, Clojure, Racket, Haskell
-- MongoDB
+- MongoDB, PostgreSQL
 - Docker
 
 __Retired__   
-I rarely use these any more, and summon these only as strictly necessary.
+I summon the following only when strictly necessary.
 
-- SAS
 - C, Awk, Tcl
-- SPSS, MS Excel/VBA, MS Access
+- SAS, SPSS, MS Excel/VBA, MS Access
 - Subversion (SVN)
 
-<hr/>
+***
 ### R Consulting
 Consulting projects on R-related issues are welcome; I provide this service at a reasonable rate, remotely or on-site. Please inquire for availability and work samples. 
-<hr/>
+***
 _a live copy of [this document](http://iqis.netlify.com/vitae)_
