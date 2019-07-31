@@ -101,6 +101,24 @@ rm(foo)
 
 Bye-bye! 
     
+#### P.S.
+Another way to make a constant is even more straightforward using `lockBinding()`.
+
+```{r error = TRUE}
+const <- function(name, value){
+  assign(deparse(substitute(name)), value, envir = parent.frame())
+  lockBinding(substitute(name), env = parent.frame())
+}
+
+const(bar, "irish")
+
+bar
+
+bar <- "bavarian"
+
+```
+
+
 #### See also
 more on active binding:
 
