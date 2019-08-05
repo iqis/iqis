@@ -1,3 +1,13 @@
+---
+title: Handling Large Data in R, a Naive Way
+author: Siqi Zhang
+date: '2019-07-16'
+slug: caching-r-obj
+categories:
+  - R
+tags: []
+---
+
 
 
 <p>Recently I ran accross a problem: The program I’m writing reads from hundreds of large data sets totaling in tens of gigabytes, and the memory on my or any potential user’s machine simply won’t fit.</p>
@@ -87,7 +97,7 @@ is_stash_pointer &lt;- function(x){
 }</code></pre>
 <pre class="r"><code>mtcars2</code></pre>
 <pre><code>## &lt;stash_pointer&gt; `data.frame` 0.01 Mb
-## -  C:\Users\Siqi\AppData\Local\Temp\RtmpYFr3cu/BZHR2Y37P16evnOCQJe1.RStash</code></pre>
+## -  C:\Users\Siqi\AppData\Local\Temp\RtmpQvafGF/4IETGun86tbpeMdGmOy0.RStash</code></pre>
 <pre class="r"><code>is_stash_pointer(mtcars2)</code></pre>
 <pre><code>## [1] TRUE</code></pre>
 <pre class="r"><code>clear_stash(mtcars2)</code></pre>
@@ -103,19 +113,19 @@ is_stash_pointer &lt;- function(x){
 <pre class="r"><code>stash_pointer_list</code></pre>
 <pre><code>## [[1]]
 ## &lt;stash_pointer&gt; `data.frame` 0.01 Mb
-## -  C:\Users\Siqi\AppData\Local\Temp\RtmpYFr3cu/S8pL77B87S3jx3a25smF.RStash
+## -  C:\Users\Siqi\AppData\Local\Temp\RtmpQvafGF/kkss3mmDmUw1JsAq2BgX.RStash
 ## [[2]]
 ## &lt;stash_pointer&gt; `data.frame` 0.01 Mb
-## -  C:\Users\Siqi\AppData\Local\Temp\RtmpYFr3cu/5lFJTgi1JJQPrmMslt9L.RStash
+## -  C:\Users\Siqi\AppData\Local\Temp\RtmpQvafGF/IdLKIRa0R9qooIhqnnLm.RStash
 ## [[3]]
 ## &lt;stash_pointer&gt; `data.frame` 0 Mb
-## -  C:\Users\Siqi\AppData\Local\Temp\RtmpYFr3cu/2wOw12yoRJj8ZuVepzR1.RStash
+## -  C:\Users\Siqi\AppData\Local\Temp\RtmpQvafGF/8EkrNmQVmLZFg1WXtkPM.RStash
 ## [[4]]
 ## &lt;stash_pointer&gt; `data.frame` 0 Mb
-## -  C:\Users\Siqi\AppData\Local\Temp\RtmpYFr3cu/2LdbmKt9Tgel6EqKdEbG.RStash
+## -  C:\Users\Siqi\AppData\Local\Temp\RtmpQvafGF/PH8BuUoxJyrVXepp3g8K.RStash
 ## [[5]]
 ## &lt;stash_pointer&gt; `data.frame` 0.01 Mb
-## -  C:\Users\Siqi\AppData\Local\Temp\RtmpYFr3cu/XbSw6MHYCfKKYNJfBmIR.RStash</code></pre>
+## -  C:\Users\Siqi\AppData\Local\Temp\RtmpQvafGF/drRGUIhaXoejjSJHZ0eG.RStash</code></pre>
 <p>See the column name of every data frame:</p>
 <pre class="r"><code>map(stash_pointer_list, ~ exec(.) %&gt;% colnames())</code></pre>
 <pre><code>## [[1]]
