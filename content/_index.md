@@ -14,9 +14,9 @@ output: word_document
 
 #### ...is a Data Analyst, R and Shiny developer.
 
-From 2012, I have made a living writing R codes. My works have served several car makers, a fast-serve restaurant chain, a brewery, an equity fund and some others. I've also authored course contents for an online learning platform. With some rants, this blog is mostly good words about R. 
+From 2012, I have made a living writing R codes. My works have served a pharmaceutical company, several car makers, a fast-serve restaurant chain, a brewery, an equity fund and many others. I've also authored course contents for an online learning platform. With some rants, this blog is mostly good words about R. 
 
-I have developed several R packages outside the job, and am working to get them all on CRAN. I use `require()`, because it is a verb. I advocate for reproduceable and extensible analysis. I also know a little of (by order of fondness): Clojure, JavaScript, Excel & VBA, Python. I went to Michigan State University and University of Maryland; Both are quite alright. I support the [Free Software Foundation](http://www.fsf.org).
+I have developed several R packages outside the job, and am working to get them on CRAN. I use `require()`, because it is a verb. I advocate for reproduceable and extensible analyses. I also know a little of (by order of fondness): Clojure, JavaScript, Excel & VBA, Python. I went to Michigan State University and University of Maryland; Both are quite alright. I support the [Free Software Foundation](http://www.fsf.org).
 
 
     
