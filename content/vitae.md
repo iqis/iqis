@@ -25,17 +25,24 @@ siqi.zhang.career@outlook.com
 ### Software ###
 
 - psyphr (in development): tidy, organize and visualize phyisological measurements, e.g. heart rate variability, skin conductance, etc.
-- [modular](https://github.com/iqis/modular): a lightweight module system for R
+- [mod](https://github.com/iqis/mod): a lightweight module system for R
 - [rolldown](https://cran.r-project.org/web/packages/rolldown/): a RMarkdown extention for "scrollytelling" 
     
 ***    
 ### Work
 
+#### Bayer Healthcare
+Computational Analyst / Whippany, NJ / Nov 2019 - Present
+
+- SAS/R migration, interoperation
+- Shiny applications
+
+
 #### Freelance R Developer
 (Remote) / Nov 2018 - Present
 
 - Custom R packages on systems integration, data manipulation and report generation
-- Shiny applications (some dashboards) for internal deployment; Web API with plumbr
+- Shiny applications; Web API with plumbr
     
     
 #### DataCamp
