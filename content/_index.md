@@ -21,7 +21,7 @@ I have developed several R packages outside the job, and am working to get them 
 
     
 ### Info
-:house:: Delaware Water Gap, PA :repeat: Jersey City, NJ
+:house:: Jersey City, NJ
 
 :email:: iqis.gnahz@gmail.com
 
