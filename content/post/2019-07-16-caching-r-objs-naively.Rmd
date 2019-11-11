@@ -116,3 +116,5 @@ map(stash_pointer_list, ~ exec(.) %>% colnames())
 ```
 
 Cheers! 
+
+For real solutions on data that's too big for memory, checkout [`fst`](https://www.fstpackage.org/) and [`bigmemory`](https://cran.r-project.org/package=bigmemory), among others.
