@@ -97,7 +97,7 @@ is_stash_pointer &lt;- function(x){
 }</code></pre>
 <pre class="r"><code>mtcars2</code></pre>
 <pre><code>## &lt;stash_pointer&gt; `data.frame` 0.01 Mb
-## -  C:\Users\Siqi\AppData\Local\Temp\RtmpQvafGF/4IETGun86tbpeMdGmOy0.RStash</code></pre>
+## -  C:\Users\ELATI\AppData\Local\Temp\RtmpC2ecQK/frtPFqQUQyGw4FD9P0t1.RStash</code></pre>
 <pre class="r"><code>is_stash_pointer(mtcars2)</code></pre>
 <pre><code>## [1] TRUE</code></pre>
 <pre class="r"><code>clear_stash(mtcars2)</code></pre>
@@ -113,19 +113,19 @@ is_stash_pointer &lt;- function(x){
 <pre class="r"><code>stash_pointer_list</code></pre>
 <pre><code>## [[1]]
 ## &lt;stash_pointer&gt; `data.frame` 0.01 Mb
-## -  C:\Users\Siqi\AppData\Local\Temp\RtmpQvafGF/kkss3mmDmUw1JsAq2BgX.RStash
+## -  C:\Users\ELATI\AppData\Local\Temp\RtmpC2ecQK/lBXoCPw8KfFLyhUEDQ8c.RStash
 ## [[2]]
 ## &lt;stash_pointer&gt; `data.frame` 0.01 Mb
-## -  C:\Users\Siqi\AppData\Local\Temp\RtmpQvafGF/IdLKIRa0R9qooIhqnnLm.RStash
+## -  C:\Users\ELATI\AppData\Local\Temp\RtmpC2ecQK/vqcoMazC0vMm2bh1KJWB.RStash
 ## [[3]]
 ## &lt;stash_pointer&gt; `data.frame` 0 Mb
-## -  C:\Users\Siqi\AppData\Local\Temp\RtmpQvafGF/8EkrNmQVmLZFg1WXtkPM.RStash
+## -  C:\Users\ELATI\AppData\Local\Temp\RtmpC2ecQK/I08InLu4DOnWRyAdupho.RStash
 ## [[4]]
 ## &lt;stash_pointer&gt; `data.frame` 0 Mb
-## -  C:\Users\Siqi\AppData\Local\Temp\RtmpQvafGF/PH8BuUoxJyrVXepp3g8K.RStash
+## -  C:\Users\ELATI\AppData\Local\Temp\RtmpC2ecQK/KCKIOEQ994qOBjijQPoJ.RStash
 ## [[5]]
 ## &lt;stash_pointer&gt; `data.frame` 0.01 Mb
-## -  C:\Users\Siqi\AppData\Local\Temp\RtmpQvafGF/drRGUIhaXoejjSJHZ0eG.RStash</code></pre>
+## -  C:\Users\ELATI\AppData\Local\Temp\RtmpC2ecQK/hgGc332c70GpVXN3a3U7.RStash</code></pre>
 <p>See the column name of every data frame:</p>
 <pre class="r"><code>map(stash_pointer_list, ~ exec(.) %&gt;% colnames())</code></pre>
 <pre><code>## [[1]]
@@ -133,8 +133,7 @@ is_stash_pointer &lt;- function(x){
 ## [11] &quot;carb&quot;
 ## 
 ## [[2]]
-## [1] &quot;Sepal.Length&quot; &quot;Sepal.Width&quot;  &quot;Petal.Length&quot; &quot;Petal.Width&quot; 
-## [5] &quot;Species&quot;     
+## [1] &quot;Sepal.Length&quot; &quot;Sepal.Width&quot;  &quot;Petal.Length&quot; &quot;Petal.Width&quot;  &quot;Species&quot;     
 ## 
 ## [[3]]
 ## [1] &quot;weight&quot; &quot;feed&quot;  
@@ -145,3 +144,4 @@ is_stash_pointer &lt;- function(x){
 ## [[5]]
 ## [1] &quot;Murder&quot;   &quot;Assault&quot;  &quot;UrbanPop&quot; &quot;Rape&quot;</code></pre>
 <p>Cheers!</p>
+<p>For real solutions on data that’s too big for memory, checkout <a href="https://www.fstpackage.org/"><code>fst</code></a> and <a href="https://cran.r-project.org/package=bigmemory"><code>bigmemory</code></a>, among others.</p>
