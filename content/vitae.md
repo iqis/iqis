@@ -25,7 +25,8 @@ siqi.zhang.career@outlook.com
 ### Software ###
 
 - psyphr (in development): tidy, organize and visualize phyisological measurements, e.g. heart rate variability, skin conductance, etc.
-- [mod](https://github.com/iqis/mod): a lightweight module system for R
+- [Q7](https://github.com/iqis/mod): a type system for postmodern OOP
+- [mod](https://github.com/iqis/mod): a lightweight module system 
 - [rolldown](https://cran.r-project.org/web/packages/rolldown/): a RMarkdown extention for "scrollytelling" 
     
 ***    
@@ -34,14 +35,15 @@ siqi.zhang.career@outlook.com
 #### Bayer Healthcare
 Computational Analyst / Whippany, NJ / Nov 2019 - Present
 
-- SAS/R migration, interoperation
-- Shiny applications
+- SAS to R migration and interoperation
+- Modularized Shiny applications 
+- Familiar with SDTM  & ADaM data models and clinical trial design & reporting
 
 
 #### Freelance R Developer
 (Remote) / Nov 2018 - Present
 
-- Custom R packages on systems integration, data manipulation and report generation
+- Custom R solutions on systems integration, data manipulation and report generation
 - Shiny applications; Web API with plumbr
     
     
@@ -141,25 +143,26 @@ I claim expertise on the following.
 __Developing__    
 I know the following beyond the basics, and can solve real problems.
 
-- HTML/CSS, JavaScript (with jQuery)
+- HTML/CSS, JavaScript (with jQuery), TypeScript
 - Python
 - Git
-- Tableau, MS Power BI
+- Tableau
 
 __Experimental__    
 I study but have not used the following regularly for work.
 
-- React.js, Node.js
-- Julia, Clojure, Racket, Haskell
+- React.js, Bootstrap, Sass
+- Julia, Clojure, Racket, Haskell, Node.js, Java
 - MongoDB, PostgreSQL
 - Docker
 
 __Retired__   
-I summon the following only when strictly necessary.
+I summon the following only when necessitated by the circumstances.
 
-- C, Awk, Tcl
+- Awk, Tcl, Perl
 - SAS, SPSS, MS Excel/VBA, MS Access
 - Subversion (SVN)
+- MS Power BI
 
 ***
 ### R Consulting
