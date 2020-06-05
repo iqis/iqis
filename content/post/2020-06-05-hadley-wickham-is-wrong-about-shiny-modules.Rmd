@@ -1,0 +1,90 @@
+---
+title: Hadley Wickham is Wrong about Shiny Modules
+author: Siqi Zhang
+date: '2020-06-05'
+slug: hadley-wickham-is-wrong-about-shiny-modules
+categories:
+  - R
+tags:
+  - shiny
+  - shiny modules
+---
+
+
+In [this section of the _Mastering Shiny_ book](https://mastering-shiny.org/scaling-modules.html#single-object-modules), the author argues that combining the UI and server fragments into a single object doesn't work. 
+
+It does. 
+
+To do what the author says impossible, we need to first create a makeshift object.
+
+```{r}
+Adder <- function(num1, num2){
+        add <- function(){
+                num1 + num2
+        }
+        environment() # return the function's closure
+}
+
+adder <- Adder(1, 2)
+
+adder$add()
+```
+Normally when a function finishes its evaluation, its closure is gone for not being bound to a name. In the above example, the closure is captured and returned, so what's inside will be preserved for later use. 
+
+
+Building upon this pattern, the UI and the server fragments should be both defined inside this "object constructor", to share `id` and `df`, which are provided through the constructor argument.
+```{r eval=FALSE}
+Histogram <- function(id, df){
+        ns <-  NS(id)
+        # outside of `ui()` is best,
+        # in case `server()` needs to create dynamic UIs
+        
+        ui <- function() {
+                tagList(
+                        selectInput(ns("var"), "Variable", names(df)),
+                        numericInput(ns("bins"), "bins", 10, min = 1),
+                        plotOutput(ns("hist"))
+                )
+        }
+        
+        server <- function() {callModule(function(input, output, session) {
+                # this passes the server frag to callModule(),
+                # with the `id` defined in the object.
+                
+                data <- reactive(df[[input$var]])
+                output$hist <- renderPlot({
+                        hist(data(), breaks = input$bins, main = input$var)
+                }, res = 96)
+        }, id)} # id is here.
+        
+        environment()        
+}
+```
+
+
+The following application will run. Please try.
+```{r eval=FALSE}
+require(shiny)
+
+hist1 <- Histogram("mtcars", mtcars)
+hist2 <- Histogram("iris", iris)
+
+ui <- fluidPage(
+        tabsetPanel(
+                tabPanel("mtcars", hist1$ui()),
+                tabPanel("iris", hist2$ui())
+        )
+)
+server <- function(input, output, session) {
+        hist1$server()
+        hist2$server()
+}
+
+shinyApp(ui, server)
+```
+
+Given that this works, _what if we want to make the argument reactive?_-asks the author? In this case, one would simply design the `Histogram`'s  `server()` fragment to accept an argument that takes a `reactiveVal()`(or the like). The argument is passed to the module `server()` when it is being called inside the global `server()`.
+
+The author arguess that UI and server fragments are connected only through a shared ID. This is true. But organizing UI and server fragments with the above pattern and conveniences the user without obscuring this fact, which to begin with is of little importance to the average developer or the user.  
+
+OK guys, I hope you like the content of this post, sorry about the clickbait title. Let me know in the comments below whether you think I can become a YouTuber.
