@@ -1,5 +1,5 @@
 ---
-title: "Home"
+title: "Home - Siqi Zhang"
 output: word_document
 ---
 
@@ -12,16 +12,16 @@ output: word_document
 
 # Siqi Zhang
 
-#### ...is a Data Analyst, R and Shiny developer.
+#### ...is a Data Engineer, R and Shiny developer.
 
-From 2012, I have made a living writing R codes. My works have served a pharmaceutical company, several car makers, a fast-serve restaurant chain, a brewery, an equity fund and many others. I've also authored course contents for an online learning platform. With some rants, this blog is mostly good words about R. 
+From 2012, I have made a living writing computer programs. My works have served a pharmaceutical company, several car makers, a fast-serve restaurant chain, a brewery, an equity fund and many others. I've also authored course contents for an online learning platform. With some rants, this blog is mostly good words about R. 
 
-I have developed several R packages, some are good. I use `require()`, because it is a verb. I advocate for reproduceable and extensible analyses. I also know a little of (by order of fondness): Clojure, JavaScript, Perl, Excel & VBA, Python. I went to Michigan State University and University of Maryland; Both are quite alright. I support the [Free Software Foundation](http://www.fsf.org).
+I have developed several R packages, some are good. I use `require()`, because `library()` is not a verb. I also know some (by order of fondness): Clojure, F#, JavaScript, Perl, Excel & VBA, Python. I went to Michigan State University and University of Maryland; Both are quite alright. I support the [Free Software Foundation](http://www.fsf.org).
 
-
+If you can't reach me, I'm probably in the woods. 
     
 ### Info
-:house:: Jersey City, NJ
+:house:: Edgewater, NJ
 
 :email:: iqis.gnahz@gmail.com
 

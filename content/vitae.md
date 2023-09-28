@@ -1,5 +1,5 @@
 ---
-title: "Curriculum Vitae"
+title: "Curriculum Vitae - Siqi Zhang"
 geometry: margin=1in
 output:
   word_document: default
@@ -24,20 +24,22 @@ siqi.zhang.career@outlook.com
 ***
 ### Software ###
 
-- psyphr (in development): tidy, organize and visualize phyisological measurements, e.g. heart rate variability, skin conductance, etc.
-- [Q7](https://github.com/iqis/mod): a type system for postmodern OOP
-- [mod](https://github.com/iqis/mod): a lightweight module system 
-- [rolldown](https://cran.r-project.org/web/packages/rolldown/): a RMarkdown extention for "scrollytelling" 
+- [Q7](https://github.com/iqis/mod): type system for postmodern programming
+- [logthis]: friendly and extensible logging utility, also works with Shiny
+- [markable]: literate programming engine that turns structured Markdown files into R packages/Python libraries
+- [mod](https://github.com/iqis/mod): lightweight module system 
+- [rolldown](https://cran.r-project.org/web/packages/rolldown/): RMarkdown extention for "scrollytelling" 
     
 ***    
 ### Work
 
 #### Bayer Healthcare
-Computational Analyst / Whippany, NJ / Nov 2019 - Present
+Data Engineer / Whippany, NJ / Nov 2019 - Present
 
-- SAS to R migration and interoperation
-- Modularized Shiny applications 
-- Familiar with SDTM  & ADaM data models and clinical trial design & reporting
+- SAS to R migration and interoperation for clinical study data analysis, holding workshops on R language for analysts and programmers
+- Dockerized Shiny applications for clinical study reporting according to relevant GxP standards, deploying on Azure Kubernetes Service with GitHub Actions and Azure Pipeline
+- User-oriented CLI and GUI software suites for data access, exploratory analysis, TLF(Table, Listings, Figures) production, etc with Python, R, JavaScript (Observable, React, D3)
+- Data ETL & integration pipelines with Azure Data Factory; Familiar with SDTM & ADaM data models
 
 
 #### Freelance R Developer
@@ -62,7 +64,6 @@ Master Generalist in Analytics / Garden City, NY / Nov 2017 - Sep 2018
 - Develop and maintain a data management utility, including API clients for digital marketing platforms using httr, with a Shiny reporting interface
 - A/B tests on client websites, improving creative designs and ad buying
 - Lifecycle analysis with product sales, return and specification data to support product planning & design
-
     
     
 #### Universal McCann, IPG Mediabrands 	
@@ -77,33 +78,15 @@ Senior Analyst, Performance Analytics / New York, NY / July - Oct 2017
     
 #### R.H. Smith School of Business, University of Maryland
 Graduate Assistant / College Park, MD / Sep 2016 - Apr 2017
-
-- Proctor and grade undergraduate exams
-- Tutor undergraduate student on statistics and R programming
-    
     
 #### CR Snow Brewery
 CRM Analyst / Shanghai, China / Jan - Dec 2015
 
-- Query, clean, and model with sales data for customer retention, segmentation, and lifetime value
-- Serve as a data-driven advisor on DM, SMS, loyalty program, and other customer outreach initiatives
-- Make and deliver competitive profile and benchmark in industry analysis
-
-    
-    
 #### Toyota Motors (China) Investment Company
 Marketing Research Associate / Beijing, China / Aug - Dec 2014
-
-- Gather, compile and analyze automotive market trends from public and proprietary sources
-- Interactive dashboards with Excel and VBA; Conjoint analysis on consumer survey data
-    
     
 #### RAPP, Omnicom Group   
 Account Service Intern / Shanghai, China / Feb - July 2012
-
-- Manage project calendar and timesheet; conduct creative production briefing
-- Monitor and report on account performance
-- Learned and used R for data exploration and preprocessing
     
 
 ***
@@ -137,24 +120,22 @@ Account Service Intern / Shanghai, China / Feb - July 2012
 __Experienced__        
 I claim expertise on the following.
 
-- R (with Tidyverse)
-- SQL (many flavors), MySQL, MS SQL Server
+- R
+- SQL (many flavors)
+- GitHub Actions, SonarQube
 
 __Developing__    
 I know the following beyond the basics, and can solve real problems.
 
-- HTML/CSS, JavaScript (with jQuery), TypeScript
+- JavaScript(Observable, d3, React), TypeScript
 - Python
-- Git
-- Tableau
+- Docker, Kubernetes
 
 __Experimental__    
 I study but have not used the following regularly for work.
 
-- React.js, Bootstrap, Sass
-- Julia, Clojure, Racket, Haskell, Node.js, Java
+- Julia, Clojure, Racket, Haskell, Node.js, Java, F#
 - MongoDB, PostgreSQL
-- Docker
 
 __Retired__   
 I summon the following only when necessitated by the circumstances.
@@ -162,10 +143,10 @@ I summon the following only when necessitated by the circumstances.
 - Awk, Tcl, Perl
 - SAS, SPSS, MS Excel/VBA, MS Access
 - Subversion (SVN)
-- MS Power BI
+- MS Power BI, Tableau
 
 ***
 ### R Consulting
-Consulting projects on R-related issues are welcome; I provide this service at a reasonable rate, remotely or on-site. Please inquire for availability and work samples. 
+Consulting on R-related topics is provided at a reasonable rate, remotely or on-site. Please inquire for availability and work samples. 
 ***
 _a live copy of [this document](http://iqis.netlify.com/vitae)_
